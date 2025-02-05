@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, View, ViewStyle, Text } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -6,9 +6,48 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+
+  const arr: Array<Array<number>> = Array(52)
+  for(let i = 0; i<arr.length; i++){
+    let week: Array<number> = [0,0,0,0,0,0,0]
+    for(let j = 0; j<7; j++){
+      let val: number = Math.round(Math.random()*10)-5
+      if(val<0) val = 0
+      week[j] = val
+    }
+    arr[i] = week
+  }
+  
+  console.log(arr)
+
+  function getStyle(day: number): ViewStyle{
+    let viewStyle: ViewStyle ;
+    switch(day){
+      case 1:
+        viewStyle = styles.dayOne
+        break
+      case 2:
+        viewStyle = styles.dayTwo
+        break
+      case 3:
+        viewStyle = styles.dayThree
+        break
+      case 4:
+        viewStyle = styles.dayFour
+        break
+      case 5:
+        viewStyle = styles.dayFive
+        break
+      default: 
+        viewStyle = styles.dayZero
+        break
+    }
+    return viewStyle
+  }
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#A1CEDC' }}
       headerImage={
         <Image
           source={require('@/assets/images/partial-react-logo.png')}
@@ -19,36 +58,27 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
+      <ThemedView style={styles.calendarContainer}>
+        <View style={styles.calendar}>
+        {
+          arr.map(week=><View style={styles.week}>
+            {week.map(day=><View style={getStyle(day)}></View>)}
+          </View>)
+        }
+        </View>
+        <View style={styles.legend}>
+          <Text style={styles.text}>Learn how we count contributions</Text>
+          <View style={styles.lessMore}>
+            <Text style={styles.text}>Less</Text>
+            <View style={styles.dayZero}></View>
+            <View style={styles.dayOne}></View>
+            <View style={styles.dayTwo}></View>
+            <View style={styles.dayThree}></View>
+            <View style={styles.dayFour}></View>
+            <View style={styles.dayFive}></View>
+            <Text style={styles.text}>More</Text>
+          </View>
+        </View>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -60,9 +90,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  stepContainer: {
+  calendar: {
     gap: 8,
-    marginBottom: 8,
+    marginBottom: 14,
+    width:"100%",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"center",
+    
   },
   reactLogo: {
     height: 178,
@@ -71,4 +106,74 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  dayZero: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#161b22",
+  },
+  dayOne: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#0e4429",
+  },
+  dayTwo: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#006d32",
+  },
+  dayThree: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#24923b",
+  },
+  dayFour: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#26a641",
+  },
+  dayFive: {
+    height: 20,
+    width: 20,
+    borderRadius:4,
+    backgroundColor:"#39d353",
+  },
+  week: {
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"space-between",
+    gap: 8
+  },
+  text:{
+    color:"#9198a1",
+  },
+  legend: {
+    width:"auto",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between"
+  },
+  calendarContainer: {
+    width:"auto",
+    borderColor:"#3d444d",
+    borderWidth:3,
+    borderBottomEndRadius: 0,
+    borderBottomRightRadius:0,
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10,
+    backgroundColor: "#0d1117",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    padding: 20,
+  },
+  lessMore: {
+    display:"flex",
+    flexDirection:"row",
+    gap:5
+  }
 });
