@@ -20,7 +20,7 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 ## 💻 Tecnologías Utilizadas
 - React Native
 - Expo: Actualmente no se recomienda utilizar React Native <b>sin</b> utilizar un framework y Expo es el único framework recomendado de forma oficial (aunque existen otros que puedes utilizar). Puedes leer la información en la página oficial [aquí](https://reactnative.dev/blog/2024/06/25/use-a-framework-to-build-react-native-apps)
-- Native Base
+- Typescript: Lenguaje de programación que le añade tipos a Javascript. Si no lo conoces todavía, es un buen momento para empezar
 
 ## Instalación y uso
 
