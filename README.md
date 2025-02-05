@@ -18,6 +18,8 @@
 <a name="description"></a>
 Todos los domingos se publica un nuevo 🎯target. Un target es un componente de interfaz icónico, reconocible y memorable. Algunos ejemplos son: El calendario de contribuciones de Github, la carta de una canción en Spotify o un post de Twitter.
 
+¡Aquí tienes el ejemplo del primer componente! [Calendario de Github]()
+
 ## 💻 Tecnologías Utilizadas
 
 <a name="technologies"></a>
