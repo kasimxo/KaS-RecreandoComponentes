@@ -1,10 +1,5 @@
 import { Image, StyleSheet, Platform, View, ViewStyle, Text } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
 export default function HomeScreen() {
 
   const arr: Array<Array<number>> = Array(52)
@@ -46,41 +41,26 @@ export default function HomeScreen() {
   }
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#A1CEDC' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.calendarContainer}>
-        <View style={styles.calendar}>
-        {
-          arr.map(week=><View style={styles.week}>
-            {week.map(day=><View style={getStyle(day)}></View>)}
-          </View>)
-        }
+    <View>
+      <View style={styles.calendar}>
+      {arr.map(week => <View style={styles.week}>
+        {week.map(day => <View style={getStyle(day)}></View>)}
+      </View>)}
+      </View>
+      <View style={styles.legend}>
+        <Text style={styles.text}>Learn how we count contributions</Text>
+        <View style={styles.lessMore}>
+          <Text style={styles.text}>Less</Text>
+          <View style={styles.dayZero}></View>
+          <View style={styles.dayOne}></View>
+          <View style={styles.dayTwo}></View>
+          <View style={styles.dayThree}></View>
+          <View style={styles.dayFour}></View>
+          <View style={styles.dayFive}></View>
+          <Text style={styles.text}>More</Text>
         </View>
-        <View style={styles.legend}>
-          <Text style={styles.text}>Learn how we count contributions</Text>
-          <View style={styles.lessMore}>
-            <Text style={styles.text}>Less</Text>
-            <View style={styles.dayZero}></View>
-            <View style={styles.dayOne}></View>
-            <View style={styles.dayTwo}></View>
-            <View style={styles.dayThree}></View>
-            <View style={styles.dayFour}></View>
-            <View style={styles.dayFive}></View>
-            <Text style={styles.text}>More</Text>
-          </View>
-        </View>
-      </ThemedView>
-    </ParallaxScrollView>
+      </View>
+    </View>
   );
 }
 
