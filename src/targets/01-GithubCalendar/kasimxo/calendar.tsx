@@ -1,43 +1,26 @@
 import { Image, StyleSheet, Platform, View, ViewStyle, Text } from 'react-native';
 
-export default function HomeScreen() {
+import GenerateData from './../data/data'
 
-  const arr: Array<Array<number>> = Array(52)
-  for(let i = 0; i<arr.length; i++){
-    let week: Array<number> = [0,0,0,0,0,0,0]
-    for(let j = 0; j<7; j++){
-      let val: number = Math.round(Math.random()*10)-5
-      if(val<0) val = 0
-      week[j] = val
-    }
-    arr[i] = week
-  }
-  
-  console.log(arr)
+export default function GithubCalendar() {
+  const arr: number[][] = GenerateData()
 
   function getStyle(day: number): ViewStyle{
     let viewStyle: ViewStyle ;
     switch(day){
       case 1:
-        viewStyle = styles.dayOne
-        break
+        return styles.dayOne
       case 2:
-        viewStyle = styles.dayTwo
-        break
+        return styles.dayTwo
       case 3:
-        viewStyle = styles.dayThree
-        break
+        return styles.dayThree
       case 4:
-        viewStyle = styles.dayFour
-        break
+        return styles.dayFour
       case 5:
-        viewStyle = styles.dayFive
-        break
+        return styles.dayFive
       default: 
-        viewStyle = styles.dayZero
-        break
+        return styles.dayZero
     }
-    return viewStyle
   }
 
   return (
