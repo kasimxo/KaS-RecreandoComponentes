@@ -9,7 +9,11 @@ targets.forEach((targetDir) => {
     const targetName = targetDir.split('-')[1]
     console.log(targetName)
     if (targetName === "Template") return
-    const versions = fs.readdirSync(path.join(targetsDir, targetDir)).filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx'));
+
+    const versions = fs.readdirSync(path.join(targetsDir, targetDir))
+        .filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx')
+            && !dir.endsWith('.md'));
+  
     const imports = versions
         .map((d) => `export { default as ${d} } from './${d}/target';`)
         .join("\n");
