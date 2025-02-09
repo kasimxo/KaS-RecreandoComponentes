@@ -8,7 +8,7 @@ export default function Index(){
             <Text style={styles.title}>Bienvenido/a!</Text>
             <Text style={styles.text}>Recreando Componentes es el lugar en el que podrás aprender y 
                 mejorar como Frontend developer con ReactNative! Da igual si eres Junior, Senior o estás empezando, 
-                el objetivo es superarse recreando alguno de los componentes más icónicos de Internet.
+                el objetivo es superarse recreando algunos de los componentes más icónicos de Internet.
                 </Text>
             <Text style={styles.subtitle}>
                 Listado de componentes
@@ -35,19 +35,21 @@ const styles = StyleSheet.create({
         flexDirection:"column",
         alignItems:"center",
         maxWidth:1200,
-        
+        gap: 10,
     },
     title:{
         fontSize:24,
+        width:"100%",
         fontWeight:"bold",
-        color:"#9198a1",
+        color:"#ffffff",
     },
     subtitle:{
         fontSize:20,
-        color:"#9198a1",
+        width:"100%",
+        color:"#ffffff",
     },
     text:{
-        color:"#9198a1",
+        color:"#ffffff",
     },
     componentHeader:{
         display:"flex",
@@ -56,15 +58,15 @@ const styles = StyleSheet.create({
         alignItems:"baseline"
     },
     componentAuthor:{
-        fontSize:18,
+        fontSize:20,
         marginBottom:15,
         fontWeight:"bold",
-        color:"#9198a1",
+        color:"#ffffff",
         textTransform:"capitalize",
     },
     githubAuthor:{
         color:"#5e97f2",
-        
+        fontSize:16,
         textDecorationLine:"underline",
     },
     component:{

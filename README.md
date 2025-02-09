@@ -19,12 +19,12 @@
 <a name="description"></a>
 Todos los domingos se publica un nuevo 🎯target. Un target es un componente de interfaz icónico, reconocible y memorable. Algunos ejemplos son: El calendario de contribuciones de Github, la carta de una canción en Spotify o un post de Twitter.
 
-¡Aquí tienes el ejemplo del primer componente! [Calendario de Github]()
+¡Aquí tienes el ejemplo del primer componente! [Calendario de Github](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/01-GithubCalendar/README.md)
 
 ## Target
 
 <a name="target"></a>
-El Target de esta semana es.. [Calendario de Github]()
+El Target de esta semana es.. [Calendario de Github](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/01-GithubCalendar/README.md)
 
 ## 💻 Tecnologías Utilizadas
 
@@ -50,7 +50,27 @@ Para saber cómo crear tus propios componentes y participar en el proyecto, pued
 ## Estructura del proyecto
 
 <a name="structure"></a>
-  
+La estructura principal de proyecto es la siguiente:
+```
+/
+├── src/
+│   ├── app/
+│   ├── assets/
+│   ├── components/
+│   ├── targets/
+│   │   ├── 00-Template/
+│   │   ├── 0X-TargetName/
+│   │   │   ├── username/
+│   │   │   ├── data.ts
+│   │   │   └── componentIndex.ts
+│   │   └── ...
+│   └── generateComponentIndex.js
+├── tsconfig.json
+├── package.json
+└── app.json
+```
+
+
 ## 📌 Aviso Legal
 
 <a name="legal"></a>
