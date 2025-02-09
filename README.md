@@ -38,6 +38,8 @@ Si estás leyendo esto, ¡enhorabuena! Ya estás más cerca de tu primera contri
 
 Antes de continuar, es importante que hayas leído la sección de [Instalación y uso](#instalación-y-uso)
 
+Para saber cómo crear tus propios componentes y participar en el proyecto, puedes leer la [guía de contibución](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/CONTRIBUTING.md).
+
 ## Estructura del proyecto
 
 <a name="structure"></a>
@@ -50,4 +52,4 @@ Antes de continuar, es importante que hayas leído la sección de [Instalación 
 > Este proyecto tiene un propósito exclusivamente educativo. No está afiliado, respaldado ni autorizado por ninguna de las empresas cuyos componentes son recreados.
 > Todos los derechos de diseño y marcas comerciales pertenecen a sus respectivos propietarios.
 > El código de este repositorio no puede utilizarse con fines comerciales.
-> Para más información, puedes leer la licencia del proyecto [aquí](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/20250205_Readme/LICENSE)
+> Para más información, puedes leer la licencia del proyecto [aquí](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/LICENSE.md)
