@@ -2,11 +2,13 @@
   "name": "rc",
   "version": "1.0.0",
   "main": "expo-router/entry",
+  "type": "module",
   "scripts": {
+    "prestart": "node src/generateIndex.js",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "npm run prestart && expo start --web"
   },
   "dependencies": {
     "expo": "~52.0.30",

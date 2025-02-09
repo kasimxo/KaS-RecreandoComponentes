@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Platform, View, ViewStyle, Text } from 'react-native';
 
-import GenerateData from './../data/data'
+import GenerateData from '../data'
 
 export default function GithubCalendar() {
   const arr: number[][] = GenerateData()
