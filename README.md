@@ -1,6 +1,6 @@
 # KaS-RecreandoComponentes
 
-¡Bienvenid@! RecreandoComponentes trata precisamente de eso! Da igual si eres Junior, Senior, o estás empezando con React Native, el objetivo es seguir aprendiendo y mejorando tratando de recrear algunos de los componentes más icónicos de Internet. 
+¡Bienvenido/a! RecreandoComponentes trata precisamente de eso! Da igual si eres Junior, Senior, o estás empezando con React Native, el objetivo es seguir aprendiendo y mejorando tratando de recrear algunos de los componentes más icónicos de Internet. 
 
 
 

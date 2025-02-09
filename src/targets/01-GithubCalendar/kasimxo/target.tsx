@@ -1,45 +1,38 @@
-import { Image, StyleSheet, Platform, View, ViewStyle, Text } from 'react-native';
+import { Image, StyleSheet, Platform, View, ViewStyle, Text, LayoutChangeEvent } from 'react-native';
+import { useState } from 'react';
 
 import GenerateData from '../data'
 
 export default function GithubCalendar() {
   const arr: number[][] = GenerateData()
 
-  function getStyle(day: number): ViewStyle{
-    let viewStyle: ViewStyle ;
-    switch(day){
-      case 1:
-        return styles.dayOne
-      case 2:
-        return styles.dayTwo
-      case 3:
-        return styles.dayThree
-      case 4:
-        return styles.dayFour
-      case 5:
-        return styles.dayFive
-      default: 
-        return styles.dayZero
-    }
+  const [widthContainer, setWidthContainer] = useState(0)
+
+  const onLayout = (event: LayoutChangeEvent) =>{
+    const {width} = event.nativeEvent.layout;
+    setWidthContainer(width);
   }
 
+  const size = widthContainer / 70;
+  const colors = ["#161b22","#0e4429","#006d32","#24923b","#26a641","#39d353"]
+
   return (
-    <View>
+    <View style={styles.container} onLayout={onLayout}>
       <View style={styles.calendar}>
       {arr.map(week => <View style={styles.week}>
-        {week.map(day => <View style={getStyle(day)}></View>)}
+        {week.map(day => <View style={[{borderRadius: size/5, width: size, height: size, backgroundColor: colors[day]}]}></View>)}
       </View>)}
       </View>
       <View style={styles.legend}>
         <Text style={styles.text}>Learn how we count contributions</Text>
         <View style={styles.lessMore}>
           <Text style={styles.text}>Less</Text>
-          <View style={styles.dayZero}></View>
-          <View style={styles.dayOne}></View>
-          <View style={styles.dayTwo}></View>
-          <View style={styles.dayThree}></View>
-          <View style={styles.dayFour}></View>
-          <View style={styles.dayFive}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[0]}}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[1]}}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[2]}}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[3]}}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[4]}}></View>
+          <View style={{borderRadius: size/5, width: size, height: size, backgroundColor: colors[5]}}></View>
           <Text style={styles.text}>More</Text>
         </View>
       </View>
@@ -48,62 +41,21 @@ export default function GithubCalendar() {
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container:{
+    borderWidth:1,
+    borderColor:"#9198a1",
+    borderBottomLeftRadius:0,
+    borderBottomRightRadius:0,
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10,
+    padding:20,
+    width:"100%"
   },
   calendar: {
-    gap: 8,
     marginBottom: 14,
-    width:"100%",
     display:"flex",
     flexDirection:"row",
-    justifyContent:"center",
-    
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-  dayZero: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#161b22",
-  },
-  dayOne: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#0e4429",
-  },
-  dayTwo: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#006d32",
-  },
-  dayThree: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#24923b",
-  },
-  dayFour: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#26a641",
-  },
-  dayFive: {
-    height: 20,
-    width: 20,
-    borderRadius:4,
-    backgroundColor:"#39d353",
+    justifyContent:"space-between"
   },
   week: {
     display:"flex",

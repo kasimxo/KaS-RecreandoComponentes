@@ -4,7 +4,7 @@
   "main": "expo-router/entry",
   "type": "module",
   "scripts": {
-    "prestart": "node src/generateIndex.js",
+    "prestart": "node src/generateComponentIndex.js",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
