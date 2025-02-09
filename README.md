@@ -7,6 +7,7 @@
 ## 📝 Indice
 
 - [Descripción](#description)
+- [Target](#target)
 - [Tecnologías Utilizadas](#technologies)
 - [Instalación y uso](#install)
 - [Contribuir](#contribution)
@@ -19,6 +20,11 @@
 Todos los domingos se publica un nuevo 🎯target. Un target es un componente de interfaz icónico, reconocible y memorable. Algunos ejemplos son: El calendario de contribuciones de Github, la carta de una canción en Spotify o un post de Twitter.
 
 ¡Aquí tienes el ejemplo del primer componente! [Calendario de Github]()
+
+## Target
+
+<a name="target"></a>
+El Target de esta semana es.. [Calendario de Github]()
 
 ## 💻 Tecnologías Utilizadas
 
