@@ -33,10 +33,16 @@ El Target de esta semana es.. [Calendario de Github](https://github.com/kasimxo/
 - Expo: Actualmente <b>no se recomienda utilizar React Native sin utilizar un framework</b> y Expo es el único framework recomendado de forma oficial (aunque existen otros que puedes utilizar). Puedes leer la información en la página oficial [aquí](https://reactnative.dev/blog/2024/06/25/use-a-framework-to-build-react-native-apps)
 - Typescript
 - Expo-router
+- React-dom/React-native-web: Este proyecto está preparado para funcionar en el navegador.
 
 ## Instalación y uso
 
 <a name="install"></a>
+Para intalar y utilizar este proyecto en tu navegador necesitarás tener instalado un gestor de paquetes (por ejemplo, npm). 
+1. Clona este repositorio: git clone https://github.com/kasimxo/KaS-RecreandoComponentes.git
+2. Muevete a él: cd KaS-ReacreandoComponentes
+3. Instala las dependencias: npm install
+4. Ejecútalo a través de la terminal: npm run web
 
 ## 🤝 Contribuir
 
@@ -52,7 +58,7 @@ Para saber cómo crear tus propios componentes y participar en el proyecto, pued
 <a name="structure"></a>
 La estructura principal de proyecto es la siguiente:
 ```
-/
+RC
 ├── src/
 │   ├── app/
 │   ├── assets/
