@@ -4,7 +4,7 @@
 
 
 
-## 📝 Indice
+## 🖣 Indice
 
 - [Descripción](#description)
 - [Target](#target)
@@ -21,12 +21,12 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 
 ¡Aquí tienes el ejemplo del primer componente! [Calendario de Github](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/01-GithubCalendar/README.md)
 
-## Target
+## 🎯 Target
 
 <a name="target"></a>
 El Target de esta semana es.. [Calendario de Github](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/01-GithubCalendar/README.md)
 
-## 💻 Tecnologías Utilizadas
+## 📟 Tecnologías Utilizadas
 
 <a name="technologies"></a>
 - React Native
@@ -35,7 +35,7 @@ El Target de esta semana es.. [Calendario de Github](https://github.com/kasimxo/
 - Expo-router
 - React-dom/React-native-web: Este proyecto está preparado para funcionar en el navegador.
 
-## Instalación y uso
+## 💻 Instalación y uso
 
 <a name="install"></a>
 Para intalar y utilizar este proyecto en tu navegador necesitarás tener instalado un gestor de paquetes (por ejemplo, npm). 
@@ -53,7 +53,7 @@ Antes de continuar, es importante que hayas leído la sección de [Instalación 
 
 Para saber cómo crear tus propios componentes y participar en el proyecto, puedes leer la [guía de contibución](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/CONTRIBUTING.md).
 
-## Estructura del proyecto
+## 🏢 Estructura del proyecto
 
 <a name="structure"></a>
 La estructura principal de proyecto es la siguiente:
