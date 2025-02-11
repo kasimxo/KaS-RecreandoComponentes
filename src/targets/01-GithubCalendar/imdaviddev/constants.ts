@@ -1,6 +1,6 @@
 import { Label } from "./interfaces";
 
-export const CANTIDAD_ELEMENTOS = 352;
+export const CANTIDAD_ELEMENTOS = 365;
 
 export const days: Label[] = [
   { label: "" },

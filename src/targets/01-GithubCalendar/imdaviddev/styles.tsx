@@ -8,21 +8,24 @@ export const styles = StyleSheet.create({
     borderColor: "gray",
     borderStyle: "solid",
     borderWidth: 1,
-    padding: 10,
+    padding: 20,
     color: "#c9d1d9",
     fontFamily: "Arial",
+    marginBottom: 10,
   },
   containerCalendar: {
     display: "flex",
     flexDirection: "column",
     marginVertical: 5,
+    overflow: "hidden",
+    maxWidth: "100%",
   },
   cellData: {
     width: 20,
     height: 20,
     padding: 10,
     borderRadius: 4,
-    margin: 3,
+    margin: 4,
   },
   gridData: {
     display: "flex",
@@ -44,6 +47,6 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: "#c9d1d9",
-    fontWeight: "bold",
+    fontWeight: "500",
   },
 });

@@ -17,7 +17,7 @@ export default function LessMore() {
         flexDirection: "row",
         columnGap: 5,
         justifyContent: "flex-end",
-        marginTop: 2,
+        marginTop: 5,
       }}
     >
       <Text style={styles.text}>Less</Text>
