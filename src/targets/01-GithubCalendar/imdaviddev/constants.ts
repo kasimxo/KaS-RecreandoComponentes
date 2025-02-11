@@ -1,6 +1,6 @@
 import { Label } from "./interfaces";
 
-export const CANTIDAD_ELEMENTOS = 352;
+export const CANTIDAD_ELEMENTOS = 365;
 
 export const days: Label[] = [
   { label: "" },
@@ -28,12 +28,12 @@ export const months: Label[] = [
 ];
 
 export const activityColors = {
-  low: "rgb(59, 59, 58)",
+  low: "rgb(22, 27, 34)",
   moderate: "#9be9a8",
   regular: "#40c463",
-  high: "#40c463",
-  veryHigh: "#30a14e",
-  extreme: "#216e39",
+  high: "#006d32",
+  veryHigh: "#26a641",
+  extreme: "#39d353",
 };
 
 export const colors = {

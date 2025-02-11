@@ -8,15 +8,16 @@ export default function DaysList() {
       style={{
         flex: 1,
         justifyContent: "space-between",
-        maxWidth: 30,
-        alignItems: "center",
+        maxWidth: 25,
+        alignItems: "flex-end",
+        paddingBottom: 5,
       }}
     >
       <FlatList
         style={styles.daysList}
         data={days}
         renderItem={({ item }) => (
-          <Text style={{ color: "white", textAlign: "center" }}>
+          <Text style={{ color: "white", textAlign: "right" }}>
             {item.label}
           </Text>
         )}
@@ -24,7 +25,6 @@ export default function DaysList() {
         contentContainerStyle={{
           flexGrow: 1,
           justifyContent: "space-around",
-          paddingBottom: 5,
         }}
       />
     </View>

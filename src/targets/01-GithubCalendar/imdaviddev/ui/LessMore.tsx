@@ -2,12 +2,12 @@ import { Text, View } from "react-native";
 import { styles } from "../styles";
 
 const colorLevels = [
-  "rgb(59, 59, 58)",
+  "rgb(22, 27, 34)",
   "#9be9a8",
   "#40c463",
-  "#40c463",
-  "#30a14e",
-  "#216e39",
+  "#006d32",
+  "#26a641",
+  "#39d353",
 ];
 
 export default function LessMore() {
@@ -17,7 +17,7 @@ export default function LessMore() {
         flexDirection: "row",
         columnGap: 5,
         justifyContent: "flex-end",
-        marginTop: 2,
+        marginVertical: 5,
       }}
     >
       <Text style={styles.text}>Less</Text>
