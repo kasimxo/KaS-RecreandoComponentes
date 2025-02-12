@@ -1,3 +1,11 @@
-export { default as imdaviddev } from './imdaviddev/target';
-export { default as kasimxo } from './kasimxo/target';
-export { default as Zuhaitz } from './Zuhaitz/target';
+import imdaviddev from './imdaviddev/target';
+import kasimxo from './kasimxo/target';
+import Zuhaitz from './Zuhaitz/target';
+
+const targetsArray = [
+  imdaviddev,
+  kasimxo,
+  Zuhaitz,
+];
+
+export { targetsArray as GithubCalendar };

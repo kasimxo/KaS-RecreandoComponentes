@@ -21,7 +21,7 @@ export default function Layout(){
                 display:"flex",
                 flexDirection:"row",
                 justifyContent:"center",
-                padding:25
+                paddingTop:25
             }
             }}>
 
