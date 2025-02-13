@@ -5,6 +5,9 @@ import Target from '../components/target';
 
 
 export default function Index(){
+
+    
+
     return(
         <ScrollView style={{paddingHorizontal:25}}
             contentContainerStyle={styles.componentlist}>
@@ -17,14 +20,19 @@ export default function Index(){
                 Listado de componentes
             </Text>
                 {
-                    Object.entries(Targets).map(([name, targetArray])=>(
-                        <Target name={name} targetArray={targetArray}/>
+                    Object.entries(Targets).map(([name, TargetArray], index)=>(
+                        <Target name={name} targetArray={TargetArray} key={name}/>  
                     ))
                 }
         </ScrollView>
     )
 }
 /*
+Object.entries(Targets).map(([name, TargetArray])=>(
+                        <Text>{TargetArray}</Text>
+
+                    ))
+<Target name={name} targetArray={targetArray}/>
                         <View style={styles.component}>
                             <View style={styles.componentHeader}>
                                 <Text style={styles.componentAuthor}>{name}</Text>

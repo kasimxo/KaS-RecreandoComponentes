@@ -16,20 +16,14 @@ targets.forEach((targetDir) => {
 
 
     let imports = "";
-    let targets = "const targetsArray = [\n";
+    let targets = "const targetsArray = {\n";
     let exports = `export { targetsArray as ${targetDir.split("-")[1]} };\n`;
     versions.forEach((el)=> {
         imports += `import ${el} from './${el}/target';\n`;
-        targets += `  ${el},\n`;
+        targets += `${el}:  ${el},\n`;
 })
-    targets += "];\n";
+    targets += "};\n";
     const fullContent = `${imports}\n${targets}\n${exports}`;
-
-    /*
-    const imports = versions
-        .map((d) => `export { default as ${d} } from './${d}/target';`)
-        .join("\n");
-        */
 
     fs.writeFileSync(path.join(targetsDir, targetDir, `componentIndex.ts`), fullContent);
 })
