@@ -5,6 +5,8 @@ const targetsDir = path.resolve('src/targets');
 
 const targets = fs.readdirSync(targetsDir).filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx'));
 
+let componentIndexContent = ""
+
 targets.forEach((targetDir) => {
     const targetName = targetDir.split('-')[1]
     console.log(targetName)
@@ -13,14 +15,21 @@ targets.forEach((targetDir) => {
     const versions = fs.readdirSync(path.join(targetsDir, targetDir))
         .filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx')
             && !dir.endsWith('.md'));
-  
-    const imports = versions
-        .map((d) => `export { default as ${d} } from './${d}/target';`)
-        .join("\n");
 
-    fs.writeFileSync(path.join(targetsDir, targetDir, `componentIndex.ts`), imports);
+
+    let imports = "";
+    let targets = `const ${targetName}Array = {\n`;
+    let exports = `export { ${targetName}Array as ${targetDir.split("-")[1]} };\n`;
+    versions.forEach((el) => {
+        imports += `import ${el}${targetName} from './${targetDir}/${el}/target';\n`;
+        targets += `${el}:  ${el}${targetName},\n`;
+    })
+    targets += "};\n";
+    const fullContent = `${imports}\n${targets}\n${exports}`;
+    componentIndexContent += fullContent
 })
 
+fs.writeFileSync(path.join(targetsDir, `componentIndex.ts`), componentIndexContent);
 
 
 

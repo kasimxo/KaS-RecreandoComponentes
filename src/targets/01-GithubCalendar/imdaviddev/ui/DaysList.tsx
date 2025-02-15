@@ -21,7 +21,7 @@ export default function DaysList() {
             {item.label}
           </Text>
         )}
-        keyExtractor={(item) => item.toString()}
+        keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={{
           flexGrow: 1,
           justifyContent: "space-around",

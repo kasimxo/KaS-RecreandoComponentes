@@ -17,20 +17,20 @@ export default function GithubCalendar() {
                     <View style={styles.daysLegend}>
                         <View style={{ display: 'grid', gridTemplateRows: 'repeat(7, 1fr)', marginRight: 5}}>
                             {
-                                Object.keys(DAYS).map((d, i) => <Text style={{ color: 'white', textAlign: 'end', gridRow: (i * 2) + 2 }}>{DAYS[i]}</Text>)
+                                Object.keys(DAYS).map((d, i) => <Text key={i} style={{ color: 'white', textAlign: 'end', gridRow: (i * 2) + 2 }}>{DAYS[i]}</Text>)
                             }
                         </View>
                     </View>
                     <View style={{flex: 1}}>
                         <View style={{ display: 'grid', gridTemplateColumns: 'repeat(13, 1fr)', marginBottom: 5}}>
-                            {MONTHS.map((month, i) => <Text style={{ color: 'white' }}>{MONTH_NAMES[month - 1]}</Text>)}
+                            {MONTHS.map((month, i) => <Text key={i} style={{ color: 'white' }}>{MONTH_NAMES[month - 1]}</Text>)}
                         </View>
                         <View style={styles.containerCalendar}>
                             {
-                                DATA.map((week, i) =>
-                                    <View style={styles.weekContainer}>
+                                DATA.map((week, iW) =>
+                                    <View key={iW} style={styles.weekContainer}>
                                         {week.map((d, i) => (
-                                            <View style={[{ backgroundColor: COLORS[d] }, styles.dayCell]}></View>
+                                            <View key={i} style={[{ backgroundColor: COLORS[d] }, styles.dayCell]}></View>
                                         ))}
                                     </View>
                                 )
@@ -42,7 +42,7 @@ export default function GithubCalendar() {
                     <Text style={{ color: '#9198A1' }}>Learn how we count contributions</Text>
                     <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={{ color: 'white' }}>Less</Text>
-                        {COLORS.map((color, i) => <View style={{ backgroundColor: color, width: 17, height: 17, borderRadius: 5, margin: 3 }}></View>)}
+                        {COLORS.map((color, i) => <View key={i} style={{ backgroundColor: color, width: 17, height: 17, borderRadius: 5, margin: 3 }}></View>)}
                         <Text style={{ color: 'white' }}>More</Text>
                     </View>
                 </View>
