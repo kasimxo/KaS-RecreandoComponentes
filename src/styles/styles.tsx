@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
         flexDirection:"column",
         alignItems:"center",
         maxWidth:1200,
-        minWidth:1200,
         gap: 25,
         alignSelf:"center",
     },
