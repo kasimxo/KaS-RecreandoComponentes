@@ -1,24 +1,13 @@
-import { Component } from 'react'
-import {Text, View, StyleSheet, Linking} from 'react-native'
+import {Text, View, StyleSheet} from 'react-native'
+import Target from './target'
+import * as Targets from './../targets/componentIndex'
 
-export default function Target (props: targetProps){
-    const name = props.name
-    const targetArray = props.targetArray
-    console.log(`Target: ${name} - ${"a"}`)
+export default function TargetsComponent(){
     return (
-        <View key={name}>
-            <Text style={{color:"white"}}>{name}</Text>    
+        <View>
             {
-                Object.entries(targetArray).map(([author, Component])=>(
-                    <View style={styles.component} key={author}>
-                            <View style={styles.componentHeader}>
-                                <Text style={styles.componentAuthor}>{author}</Text>
-                                <Text style={styles.githubAuthor} 
-                                    onPress={() => Linking.openURL(`https://github.com/${author}`)}>Perfil de Github</Text>
-                            </View>
-                            <Component  />
-                        </View>
-
+                Object.entries(Targets).map(([name, TargetArray], index)=>(
+                    <Target name={name} targetArray={TargetArray} key={`${name}-${index}`}/>  
                 ))
             }
         </View>
@@ -79,9 +68,3 @@ const styles = StyleSheet.create({
         width:"100%"
     }
 })
-
-
-type targetProps = {
-    name: string,
-    targetArray: object
-}

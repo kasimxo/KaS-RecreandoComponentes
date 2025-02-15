@@ -1,7 +1,5 @@
 import {View, Text, StyleSheet, Linking, ScrollView} from 'react-native';
-
-import * as Targets from './../targets/01-GithubCalendar/componentIndex'
-import Target from '../components/target';
+import TargetsComponent from './../components/targetsComponent'
 
 
 export default function Index(){
@@ -19,15 +17,12 @@ export default function Index(){
             <Text style={styles.subtitle}>
                 Listado de componentes
             </Text>
-                {
-                    Object.entries(Targets).map(([name, TargetArray], index)=>(
-                        <Target name={name} targetArray={TargetArray} key={name}/>  
-                    ))
-                }
+            <TargetsComponent />
         </ScrollView>
     )
 }
 /*
+<Target name={name} targetArray={TargetArray} key={`${name}-${index}`}/>  
 Object.entries(Targets).map(([name, TargetArray])=>(
                         <Text>{TargetArray}</Text>
 

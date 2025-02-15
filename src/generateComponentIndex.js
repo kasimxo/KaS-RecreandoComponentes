@@ -5,6 +5,8 @@ const targetsDir = path.resolve('src/targets');
 
 const targets = fs.readdirSync(targetsDir).filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx'));
 
+let componentIndexContent = ""
+
 targets.forEach((targetDir) => {
     const targetName = targetDir.split('-')[1]
     console.log(targetName)
@@ -16,18 +18,18 @@ targets.forEach((targetDir) => {
 
 
     let imports = "";
-    let targets = "const targetsArray = {\n";
-    let exports = `export { targetsArray as ${targetDir.split("-")[1]} };\n`;
-    versions.forEach((el)=> {
-        imports += `import ${el} from './${el}/target';\n`;
-        targets += `${el}:  ${el},\n`;
-})
+    let targets = `const ${targetName}Array = {\n`;
+    let exports = `export { ${targetName}Array as ${targetDir.split("-")[1]} };\n`;
+    versions.forEach((el) => {
+        imports += `import ${el}${targetName} from './${targetDir}/${el}/target';\n`;
+        targets += `${el}:  ${el}${targetName},\n`;
+    })
     targets += "};\n";
     const fullContent = `${imports}\n${targets}\n${exports}`;
-
-    fs.writeFileSync(path.join(targetsDir, targetDir, `componentIndex.ts`), fullContent);
+    componentIndexContent += fullContent
 })
 
+fs.writeFileSync(path.join(targetsDir, `componentIndex.ts`), componentIndexContent);
 
 
 
