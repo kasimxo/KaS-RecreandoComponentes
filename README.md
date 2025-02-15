@@ -24,7 +24,7 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 ## 🎯 Target
 
 <a name="target"></a>
-El Target de esta semana es.. [Calendario de Github](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/01-GithubCalendar/README.md)
+El Target de esta semana es.. [Columna de Trello](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/02-TrelloColumn/README.md)
 
 ## 📟 Tecnologías Utilizadas
 
