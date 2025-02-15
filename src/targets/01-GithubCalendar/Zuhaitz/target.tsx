@@ -42,7 +42,7 @@ export default function GithubCalendar() {
       <ScrollView style={styles.calendar}>
         <View style={styles.monthsText}>
           {months.map((month) => (
-            <Text id={month} style={[styles.text, { width: 55 }]}>
+            <Text key={month} style={[styles.text, { width: 55 }]}>
               {month}
             </Text>
           ))}
@@ -56,10 +56,10 @@ export default function GithubCalendar() {
             <Text style={styles.text}>Fri</Text>
           </View>
           {activity.map((week, id) => (
-            <View id={`${id}`} style={styles.week}>
+            <View key={`${id}`} style={styles.week}>
               {week.map((day, id) => (
                 <View
-                  id={`${id}`}
+                  key={`${id}`}
                   style={[styles.day, { backgroundColor: colors[day] }]}
                 />
               ))}

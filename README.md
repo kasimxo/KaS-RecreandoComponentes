@@ -68,8 +68,8 @@ RC
 │   │   ├── 0X-TargetName/
 │   │   │   ├── username/
 │   │   │   ├── data.ts
-│   │   │   └── componentIndex.ts
-│   │   └── ...
+│   │   │   └── Readme.md
+│   │   └── componentIndex.ts
 │   └── generateComponentIndex.js
 ├── tsconfig.json
 ├── package.json
