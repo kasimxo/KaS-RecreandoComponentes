@@ -16,7 +16,6 @@ targets.forEach((targetDir) => {
         .filter((dir) => !dir.endsWith('.ts') && !dir.endsWith('.tsx')
             && !dir.endsWith('.md'));
 
-
     let imports = "";
     let targets = `const ${targetName}Array = {\n`;
     let exports = `export { ${targetName}Array as ${targetDir.split("-")[1]} };\n`;
