@@ -19,8 +19,8 @@ export default function GithubCalendar() {
   return (
     <View style={styles.container} onLayout={onLayout}>
       <View style={styles.calendar}>
-      {arr.map(week => <View style={styles.week}>
-        {week.map(day => <View style={[{borderRadius: size/5, width: size, height: size, backgroundColor: colors[day]}]}></View>)}
+      {arr.map((week,wIndex) => <View key={wIndex} style={styles.week}>
+        {week.map((day, dIndex) => <View key={dIndex} style={[{borderRadius: size/5, width: size, height: size, backgroundColor: colors[day]}]}></View>)}
       </View>)}
       </View>
       <View style={styles.legend}>
