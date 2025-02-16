@@ -17,6 +17,9 @@ El archivo data.ts te dará:
 - El título de la columna
 - Varias tarjetas a mostrar
 
+> [!TIP]
+> Revisa la carpeta de assets, ahí encontraras cualquier icono que puedas necesitar!
+
 ## ¿Quieres puntos extra?
 - Añade un límite de 250 caracteres para el texto!
 - Eliminar está muy bien, ¿pero qué pasa si quiero cambiar el nombre de la columna o el contenido de una carta? Hazlo editable
