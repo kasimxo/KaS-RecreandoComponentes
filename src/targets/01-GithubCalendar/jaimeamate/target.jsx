@@ -73,15 +73,16 @@ const styles = StyleSheet.create({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'start',
-        width: '100%',
+        justifyContent: 'center',
     },
     container: {
         borderColor: 'mediumpurple',
         borderWidth: 1,
-        borderRadius: 5,
+        borderBottomLeftRadius:0,
+        borderBottomRightRadius:0,
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
         display: 'flex',
-        width: '100%',
         padding: 20
     },
     daysLegend: {
@@ -90,21 +91,18 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     containerCalendar: {
-        width: '100%',
         color: 'white',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // paddingHorizontal: 20
+        gap: 5
     },
     weekContainer: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 5,
-        // alignItems: 'center',
-        // marginRight: 10,
+        gap: 8,
         color: 'white'
     },
     weekNumber: {
@@ -117,7 +115,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 18,
         height: 18,
-        // margin: 4,
         color: 'white'
     },
     infoContainer: {
