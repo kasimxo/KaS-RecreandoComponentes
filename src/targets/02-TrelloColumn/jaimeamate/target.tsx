@@ -50,16 +50,23 @@ const TrelloColumn = () => {
         setIsAdding(false);
     }
 
+    // Render Trello Columns component
     return (
         <View style={styles.container}>
+            {/* TITLE */}
             <Text style={[styles.whiteText, { fontWeight: 'bold', marginBottom: 5, marginLeft: 5 }]}>{DATA.title}</Text>
+            {/* LIST ITEMS */}
             <FlatList
                 data={cards}
                 renderItem={({ item, index }) => <Item title={item} id={index}></Item>}
                 keyExtractor={(item, index) => index.toString()}
             />
+            {/* ADD BUTTON || INPUT TEXT + ADD BUTTON && CACEL BUTTON */}
             {
+                // if state is TRUE
                 isAdding ?
+                    // render this component (INPUT TEXT + ADD BUTTON && CACEL BUTTON)
+                    // Input text
                     <View>
                         <TextInput
                             style={styles.inputText}
@@ -70,10 +77,12 @@ const TrelloColumn = () => {
                             placeholderTextColor="#b6b6b6"
                             value={input}
                         />
+                        {/* add button */}
                         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                             <Pressable onPress={() => addItem(input.toString())} style={{ backgroundColor: '#FFF', padding: 4, paddingHorizontal: 10, borderRadius: 5 }} >
                                 <Text style={{ color: '#3b0a45' }}>Añadir tarjeta</Text>
                             </Pressable>
+                            {/* cancel button */}
                             <Pressable onPress={() => setIsAdding(false)}>
                                 <Image
                                     tintColor={'#fff'}
@@ -84,6 +93,7 @@ const TrelloColumn = () => {
                         </View>
                     </View>
                     :
+                    // else render this component (ADD BUTTON)
                     <Pressable
                         onHoverIn={() => setIsHovered(true)}
                         onHoverOut={() => setIsHovered(false)}
