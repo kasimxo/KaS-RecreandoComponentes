@@ -24,6 +24,7 @@ const TrelloColumn = () => {
             <Text style={styles.whiteText}>{title}</Text>
             <Pressable onPress={() => deleteItem(id)}>
                 <Image
+                    tintColor={'#fff'}
                     style={styles.deleteItemButton}
                     source={require('@assets/cancelar.png')}
                 />
@@ -70,11 +71,12 @@ const TrelloColumn = () => {
                             value={input}
                         />
                         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-                            <Pressable onPress={() => addItem(input.toString())} style={{ backgroundColor: '#579dff', padding: 4, paddingHorizontal: 10, borderRadius: 5 }} >
-                                <Text style={{ color: '#FFF' }}>Añadir tarjeta</Text>
+                            <Pressable onPress={() => addItem(input.toString())} style={{ backgroundColor: '#FFF', padding: 4, paddingHorizontal: 10, borderRadius: 5 }} >
+                                <Text style={{ color: '#3b0a45' }}>Añadir tarjeta</Text>
                             </Pressable>
                             <Pressable onPress={() => setIsAdding(false)}>
                                 <Image
+                                    tintColor={'#fff'}
                                     style={styles.deleteItemButton}
                                     source={require('@assets/cancelar.png')}
                                 />

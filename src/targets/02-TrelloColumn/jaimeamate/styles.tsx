@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
         marginVertical: 5,
     },
     deleteItemButton: {
-        tintColor:"#fff",
         width: 25,
         height: 25
     },
