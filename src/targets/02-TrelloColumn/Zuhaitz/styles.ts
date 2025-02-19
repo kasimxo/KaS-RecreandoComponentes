@@ -39,14 +39,17 @@ export const creatorStyles = StyleSheet.create({
   },
 
   addBtn: {
-    display: "flex",
-    flexDirection: "row",
-    gap: 8,
-    margin: 10,
+    padding: 10,
+    borderRadius: 10,
+  },
+
+  addBtnHover: {
+    backgroundColor: "#22272b",
   },
 
   input: {
     padding: 5,
+    paddingHorizontal: 10,
     fontSize: 18,
     borderWidth: 2,
     borderRadius: 10,

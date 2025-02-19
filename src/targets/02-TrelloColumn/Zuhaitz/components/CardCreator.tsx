@@ -17,6 +17,7 @@ const TaskCreator = ({
 }) => {
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState("");
+  const [hovering, setHovering] = useState(false);
 
   const stopEditing = () => {
     setText("");
@@ -63,14 +64,11 @@ const TaskCreator = ({
       ) : (
         <Pressable
           onPress={() => setEditing(true)}
-          style={creatorStyles.addBtn}
+          onHoverIn={() => setHovering(true)}
+          onHoverOut={() => setHovering(false)}
+          style={[creatorStyles.addBtn, hovering && creatorStyles.addBtnHover]}
         >
-          <Image
-            source={require("../../../../assets/editar.png")}
-            style={styles.icon}
-            tintColor={"white"}
-          />
-          <Text style={styles.text}>Añade una tarjeta</Text>
+          <Text style={styles.text}>+ Añade una tarjeta</Text>
         </Pressable>
       )}
     </View>
