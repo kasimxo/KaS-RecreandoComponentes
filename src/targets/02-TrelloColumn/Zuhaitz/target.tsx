@@ -1,17 +1,18 @@
-import { View, Text } from "react-native";
 import { useState } from "react";
+import { View, Text, TextInput } from "react-native";
+
+import TaskCreator from "./components/CardCreator";
+import Card from "./components/Card";
 
 import GenerateData from "../data";
 import { TrelloColumnData } from "./types";
 import { styles, columnStyles } from "./styles";
 
-import TaskCreator from "./components/CardCreator";
-import Card from "./components/Card";
-
 const TrelloColumn = () => {
   const data: TrelloColumnData = GenerateData();
   const [title, setTitle] = useState(data.title);
   const [cards, setCards] = useState(data.cards);
+  const [editing, setEditing] = useState(false);
 
   const deleteCardHandle = (id: number) => {
     let tasks = cards;
@@ -25,11 +26,38 @@ const TrelloColumn = () => {
     setCards([...tasks]);
   };
 
+  const editCardHandle = (id: number, text: string) => {
+    let tasks = cards;
+    cards[id] = text;
+    setCards([...tasks]);
+  };
+
   return (
     <View style={columnStyles.container}>
-      <Text style={[columnStyles.title, styles.text]}>{title}</Text>
+      {editing ? (
+        <TextInput
+          value={title}
+          onChangeText={setTitle}
+          onBlur={() => setEditing(false)}
+          autoFocus
+          style={[columnStyles.title, styles.text]}
+        />
+      ) : (
+        <Text
+          onPress={() => setEditing(true)}
+          style={[columnStyles.title, styles.text]}
+        >
+          {title}
+        </Text>
+      )}
       {cards.map((task, i) => (
-        <Card id={i} text={task} onDeleteHandle={deleteCardHandle} key={i} />
+        <Card
+          id={i}
+          text={task}
+          onEditCardHandle={editCardHandle}
+          onDeleteHandle={deleteCardHandle}
+          key={i}
+        />
       ))}
       <TaskCreator createCardHandle={createCardHandle} />
     </View>

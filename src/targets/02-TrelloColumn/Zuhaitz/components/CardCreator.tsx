@@ -6,7 +6,6 @@ import {
   Image,
   TextInput,
   Platform,
-  Button,
 } from "react-native";
 import { creatorStyles, styles } from "../styles";
 

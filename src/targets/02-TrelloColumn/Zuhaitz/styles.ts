@@ -14,7 +14,7 @@ export const columnStyles = StyleSheet.create({
   },
 
   title: {
-    margin: 10,
+    paddingLeft: 10,
     marginVertical: 6,
     textTransform: "capitalize",
   },
@@ -26,6 +26,7 @@ export const cardStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: 5,
     padding: 10,
     paddingHorizontal: 16,
     borderRadius: 10,
