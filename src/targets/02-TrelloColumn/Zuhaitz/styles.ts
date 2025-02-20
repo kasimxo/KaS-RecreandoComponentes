@@ -4,7 +4,7 @@ export const columnStyles = StyleSheet.create({
   container: {
     display: "flex",
     gap: 10,
-    width: 300,
+    maxWidth: 300,
     padding: 10,
     marginBottom: 20,
     backgroundColor: "#101204",

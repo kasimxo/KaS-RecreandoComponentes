@@ -21,7 +21,7 @@ const Card = ({ id, text, onEditCardHandle, onDeleteHandle }: CardData) => {
             onChangeText={(newText) => onEditCardHandle(id, newText)}
             onBlur={() => setEditing(false)}
             autoFocus
-            style={[styles.text, styles.text]}
+            style={[styles.text]}
           />
         ) : (
           <Text onPress={() => setEditing(true)} style={styles.text}>
