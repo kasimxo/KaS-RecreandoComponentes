@@ -1,0 +1,61 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    title:{
+        fontWeight:"bold",
+        color:"white",
+        fontSize:16,
+        marginLeft:10
+    },
+    text:{
+        color: "white"
+    },
+    card:{
+        backgroundColor:"#101204",
+        padding:10,
+        borderRadius:25,
+        alignSelf:"center",
+        display:"flex",
+        flexDirection:"column",
+        alignItems:"flex-start",
+        gap:10,
+        minWidth:300
+    },
+    item:{
+        backgroundColor:"#22272b",
+        borderRadius:10,
+        width:"100%",
+        paddingHorizontal:10,
+        paddingVertical:5,
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-between"
+    },
+    addButton:{
+        width:"100%",
+        borderRadius:10,
+        paddingHorizontal:10,
+        paddingVertical:5
+    },
+    addButtonIshovered:{
+        backgroundColor:"#2c2e2f"
+    },
+    addItemButton:{
+        backgroundColor:"#579dff",
+        borderRadius:5,
+        paddingHorizontal:10,
+        paddingVertical:5
+    },
+    cancelAddition:{
+        width:24,
+        height:24,
+        tintColor:"#9ba6af"
+    },
+    textInput:{
+        borderRadius:10,
+        width:"100%",
+        padding: 10,
+        backgroundColor:"#22272b",
+        color:"white"
+    }
+})
