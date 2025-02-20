@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -39,7 +39,6 @@ export const styles = StyleSheet.create({
 export const calendar = StyleSheet.create({
   container: {
     paddingBottom: 8,
-    overflow: "scroll",
   },
   monthsText: {
     display: "flex",

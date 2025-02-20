@@ -1,10 +1,8 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
 import GenerateData from "../data";
-
-import { DayList, Footer, MonthList } from "./components";
-import { colors } from "./constants";
-import { calendar, styles } from "./styles";
+import { Calendar, Footer } from "./components";
+import { styles } from "./styles";
 
 export default function GithubCalendar() {
   const activity: number[][] = GenerateData();
@@ -20,24 +18,9 @@ export default function GithubCalendar() {
       </Text>
 
       <View style={styles.box}>
-        <View style={calendar.container}>
-          <MonthList />
-
-          <View style={calendar.daysContainer}>
-            <DayList />
-
-            {activity.map((week, id) => (
-              <View key={`${id}`} style={calendar.week}>
-                {week.map((day, id) => (
-                  <View
-                    key={`${id}`}
-                    style={[calendar.day, { backgroundColor: colors[day] }]}
-                  />
-                ))}
-              </View>
-            ))}
-          </View>
-        </View>
+        <ScrollView horizontal>
+          <Calendar activity={activity} />
+        </ScrollView>
 
         <Footer />
       </View>
