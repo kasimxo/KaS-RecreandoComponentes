@@ -55,7 +55,6 @@ export const calendar = StyleSheet.create({
   daysContainer: {
     display: "flex",
     flexDirection: "row",
-    // flexWrap: "wrap",
     gap: 5,
     marginHorizontal: 8,
   },
@@ -80,7 +79,6 @@ export const footerStyles = StyleSheet.create({
     alignItems: "center",
     marginTop: 4,
     paddingHorizontal: 8,
-    // paddingVertical: 4,
   },
   colorGuide: {
     display: "flex",
