@@ -6,11 +6,11 @@ const MonthList = () => {
   return (
     <View style={calendar.monthsText}>
       {months.map((month) => (
-        <Text key={month} style={[styles.text, { width: 55 }]}>
-          {month}
-        </Text>
+        <View key={month}>
+          <Text style={[styles.text, calendar.month]}>{month}</Text>
+        </View>
       ))}
-      <Text style={[styles.text, { width: 55 }]}>{months[0]}</Text>
+      <Text style={[styles.text, calendar.month]}>{months[0]}</Text>
     </View>
   );
 };

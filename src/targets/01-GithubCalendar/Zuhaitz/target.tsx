@@ -14,31 +14,33 @@ export default function GithubCalendar() {
   const contr = list.reduce((a, v) => (a = a + v));
 
   return (
-    <View style={{ margin: "auto", marginBottom: 20 }}>
+    <View style={styles.container}>
       <Text style={styles.title}>
         {contr.toLocaleString("en-US")} contributions in the last year
       </Text>
 
-      <ScrollView style={calendar.container}>
-        <MonthList />
+      <View style={styles.box}>
+        <View style={calendar.container}>
+          <MonthList />
 
-        <View style={calendar.daysContainer}>
-          <DayList />
+          <View style={calendar.daysContainer}>
+            <DayList />
 
-          {activity.map((week, id) => (
-            <View key={`${id}`} style={calendar.week}>
-              {week.map((day, id) => (
-                <View
-                  key={`${id}`}
-                  style={[calendar.day, { backgroundColor: colors[day] }]}
-                />
-              ))}
-            </View>
-          ))}
+            {activity.map((week, id) => (
+              <View key={`${id}`} style={calendar.week}>
+                {week.map((day, id) => (
+                  <View
+                    key={`${id}`}
+                    style={[calendar.day, { backgroundColor: colors[day] }]}
+                  />
+                ))}
+              </View>
+            ))}
+          </View>
         </View>
 
         <Footer />
-      </ScrollView>
+      </View>
     </View>
   );
 }

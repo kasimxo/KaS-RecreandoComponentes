@@ -1,29 +1,17 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  container: {
+    marginBottom: 20,
+    maxWidth: "100%",
+    margin: "auto",
+  },
   title: {
     marginBottom: 8,
     fontSize: 16,
     color: "white",
   },
-  textCol: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
-  },
-  text: {
-    fontSize: 12,
-    textTransform: "capitalize",
-    color: "white",
-  },
-  secondaryText: {
-    fontSize: 12,
-    color: "#9198a1",
-  },
-});
-
-export const calendar = StyleSheet.create({
-  container: {
+  box: {
     paddingHorizontal: 12,
     paddingVertical: 8,
     paddingTop: 12,
@@ -32,18 +20,42 @@ export const calendar = StyleSheet.create({
     borderTopRightRadius: 10,
     borderColor: "#9198a1",
   },
+  textCol: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+  },
+  text: {
+    fontSize: 14,
+    textTransform: "capitalize",
+    color: "white",
+  },
+  secondaryText: {
+    fontSize: 14,
+    color: "#9198a1",
+  },
+});
+
+export const calendar = StyleSheet.create({
+  container: {
+    paddingBottom: 8,
+    overflow: "scroll",
+  },
   monthsText: {
     display: "flex",
     flexDirection: "row",
     gap: 5,
     marginHorizontal: 8,
     marginBottom: 4,
-    paddingLeft: 30,
+    paddingLeft: 34,
+  },
+  month: {
+    width: 79,
   },
   daysContainer: {
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap",
+    // flexWrap: "wrap",
     gap: 5,
     marginHorizontal: 8,
   },
@@ -54,8 +66,8 @@ export const calendar = StyleSheet.create({
     gap: 5,
   },
   day: {
-    width: 10,
-    height: 10,
+    width: 16,
+    height: 16,
     borderRadius: 2,
   },
 });
@@ -65,15 +77,16 @@ export const footerStyles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     marginTop: 4,
     paddingHorizontal: 8,
-    paddingVertical: 4,
+    // paddingVertical: 4,
   },
   colorGuide: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: 3,
+    gap: 5,
     color: "#9198a1",
   },
 });
