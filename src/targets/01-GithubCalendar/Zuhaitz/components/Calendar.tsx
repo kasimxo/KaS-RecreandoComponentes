@@ -1,6 +1,8 @@
 import { View } from "react-native";
 
-import { DayList, DayCell, MonthList } from "./index";
+import MonthList from "./MonthList";
+import DayList from "./DayList";
+import DayCell from "./DayCell";
 import { calendar } from "../styles";
 
 const Calendar = ({ activity }: { activity: number[][] }) => {
