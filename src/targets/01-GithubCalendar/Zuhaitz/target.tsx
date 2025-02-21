@@ -1,5 +1,4 @@
 import { View, Text, ScrollView } from "react-native";
-
 import GenerateData from "../data";
 import { Calendar, Footer } from "./components";
 import { styles } from "./styles";
