@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import GenerateDate from "../data";
+import useMemoizedWidth from "./hooks/useMemoizedWidth";
 
 const data = GenerateDate();
 
@@ -30,12 +31,21 @@ const MONTHS = [
 const DAYS = ["Mon", "Wed", "Fri"];
 
 function CalendarColumn(props: { days: number[] }) {
+  const daySize = useMemoizedWidth();
+
   return (
     <View style={styles.column}>
       {props.days.map((day, index) => (
         <View
           key={`${index}-${day}`}
-          style={[styles.day, { backgroundColor: colors[day] }]}
+          style={[
+            styles.day,
+            {
+              backgroundColor: colors[day],
+              width: daySize,
+              height: daySize,
+            },
+          ]}
         />
       ))}
     </View>
@@ -89,13 +99,21 @@ function Months() {
 }
 
 function Legend() {
+  const daySize = useMemoizedWidth();
+
   return (
     <View style={styles.legend}>
       <Text style={styles.text}>Learn how we count contributions</Text>
       <View style={styles.lessMore}>
         <Text style={styles.text}>Less</Text>
         {colors.map((color) => (
-          <View key={color} style={[styles.day, { backgroundColor: color }]} />
+          <View
+            key={color}
+            style={[
+              styles.day,
+              { backgroundColor: color, width: daySize, height: daySize },
+            ]}
+          />
         ))}
         <Text style={styles.text}>More</Text>
       </View>
@@ -115,7 +133,6 @@ export default function GithubCalendar() {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
-    alignSelf: "center",
     padding: 20,
     gap: 10,
     borderWidth: 1,
@@ -134,8 +151,6 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   day: {
-    height: 10,
-    width: 10,
     borderRadius: 2,
     gap: 10,
   },
