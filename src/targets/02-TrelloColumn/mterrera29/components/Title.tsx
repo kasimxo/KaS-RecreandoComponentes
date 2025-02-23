@@ -1,16 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  TextInput,
-  Image,
-  ScrollView,
-  Linking,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from 'react-native';
+import { View, Text, StyleSheet, Pressable, TextInput } from 'react-native';
 import GenerateData from '../../data';
 import React, { useState, useRef, useEffect } from 'react';
 
