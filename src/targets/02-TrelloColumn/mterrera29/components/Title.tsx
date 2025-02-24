@@ -91,14 +91,6 @@ const styles = StyleSheet.create({
     height: 20,
     tintColor: '#b6c1ca',
   },
-  deleteIcon: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    height: '100%',
-    color: '#b6c1ca',
-  },
   titleContainer: {
     marginBottom: 10,
     paddingLeft: 5,
