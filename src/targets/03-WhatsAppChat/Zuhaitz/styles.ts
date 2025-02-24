@@ -4,10 +4,12 @@ const chatStyles = StyleSheet.create({
   container: {
     minWidth: 300,
     width: "100%",
+    minHeight: 600,
     height: "100%",
+    marginBottom: 20,
   },
   chatZone: {
-    maxHeight: 100,
+    maxHeight: 600,
     height: "100%",
     backgroundColor: "#aaaaaa",
   },
@@ -42,6 +44,28 @@ const chatHeaderStyles = StyleSheet.create({
   },
 });
 
+const messageStyles = StyleSheet.create({
+  container: {
+    maxWidth: "90%",
+    backgroundColor: "white",
+    padding: 5,
+    borderRadius: 10,
+  },
+  textHourContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 5,
+    alignItems: "baseline",
+  },
+  content: { fontSize: 16 },
+  date: {
+    flex: 1,
+    textAlign: "right",
+    fontSize: 14,
+    color: "#a1a1a1",
+  },
+});
+
 const styles = StyleSheet.create({ text: { color: "white" } });
 
-export { chatStyles, chatHeaderStyles, styles };
+export { chatStyles, chatHeaderStyles, messageStyles, styles };

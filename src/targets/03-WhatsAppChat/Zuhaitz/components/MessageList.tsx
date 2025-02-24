@@ -1,10 +1,16 @@
 import { useEffect, useRef } from "react";
-import { View, Text, FlatList } from "react-native";
-import { Message } from "../types";
-import { styles } from "../styles";
+import { View, FlatList } from "react-native";
+import { Message as MessageType } from "../types";
+import Message from "./Message";
 
-const MessageList = ({ messages }: { messages: Message[] }) => {
-  const flatListRef = useRef(null as FlatList<Message> | null);
+const MessageList = ({
+  messages,
+  colors,
+}: {
+  messages: MessageType[];
+  colors: { [key: string]: string };
+}) => {
+  const flatListRef = useRef(null as FlatList<MessageType> | null);
 
   useEffect(() => {
     flatListRef.current?.scrollToOffset({ offset: 1000 });
@@ -13,12 +19,13 @@ const MessageList = ({ messages }: { messages: Message[] }) => {
   return (
     <View style={{ flex: 1 }}>
       <FlatList
+        style={{ padding: 5 }}
         ref={(ref) => (flatListRef.current = ref)}
         data={messages}
         renderItem={({ item }) => (
-          <Text style={[styles.text]}>{item.content}</Text>
+          <Message message={item} color={colors[item.user]} />
         )}
-        keyExtractor={(item, i) => {
+        keyExtractor={(_, i) => {
           return `${i}`;
         }}
       />
