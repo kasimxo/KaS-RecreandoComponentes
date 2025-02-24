@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, FlatList } from "react-native";
 
 import GenerateData from "../data";
 import { ChatLog } from "./types";
-import { ChatHeader } from "./components";
+import { ChatHeader, MessageList } from "./components";
 
-import { chatStyles } from "./styles";
+import { chatStyles, styles } from "./styles";
 
 const WhatsAppChat = () => {
   const chat: ChatLog = GenerateData();
@@ -13,12 +13,17 @@ const WhatsAppChat = () => {
   const [members, setMembers] = useState([] as string[]);
 
   useEffect(() => {
+    console.log(messages);
+
     setMembers([...new Set(messages.map((message) => message.user))]);
   }, [messages]);
 
   return (
     <View style={chatStyles.container}>
       <ChatHeader chatName="Chat de grupo" members={members} />
+      <View style={chatStyles.chatZone}>
+        <MessageList messages={messages} />
+      </View>
     </View>
   );
 };

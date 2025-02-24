@@ -4,6 +4,12 @@ const chatStyles = StyleSheet.create({
   container: {
     minWidth: 300,
     width: "100%",
+    height: "100%",
+  },
+  chatZone: {
+    maxHeight: 100,
+    height: "100%",
+    backgroundColor: "#aaaaaa",
   },
 });
 
