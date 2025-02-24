@@ -6,7 +6,7 @@ import {
   Pressable,
   Image,
 } from 'react-native';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 type NewCardFormProps = {
   openForm: boolean;
@@ -45,29 +45,7 @@ export default function NewCardForm({
             onChangeText={(text) => setCardContent(text)}
             ref={textInputRef}
             maxLength={250}
-          >
-            {' '}
-            <Pressable
-              style={({ pressed }) => [
-                styles.addFormX,
-                { backgroundColor: pressed ? '#22272b' : '#121212' },
-              ]}
-              onPress={handleNewForm}
-            >
-              <View style={styles.icon}>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='30'
-                  height='30'
-                  fill='currentColor'
-                  className='bi bi-x'
-                  viewBox='0 0 16 16'
-                >
-                  <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708' />
-                </svg>
-              </View>
-            </Pressable>
-          </TextInput>
+          ></TextInput>
           <View style={styles.addForm}>
             <Pressable
               style={({ pressed }) => [
@@ -86,16 +64,10 @@ export default function NewCardForm({
               onPress={handleNewForm}
             >
               <View style={styles.icon}>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='30'
-                  height='30'
-                  fill='currentColor'
-                  className='bi bi-x'
-                  viewBox='0 0 16 16'
-                >
-                  <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708' />
-                </svg>
+                <Image
+                  style={styles.iconX}
+                  source={require('@assets/cancelar.png')}
+                />
               </View>
             </Pressable>
           </View>
@@ -113,6 +85,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     color: '#b6c1ca',
+  },
+  iconX: {
+    width: 25,
+    height: 25,
+    tintColor: '#b6c1ca',
+    marginRight: 2,
   },
   deleteIcon: {
     display: 'flex',

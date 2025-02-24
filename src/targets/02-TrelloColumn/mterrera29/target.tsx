@@ -1,17 +1,6 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  TextInput,
-  Image,
-  ScrollView,
-  Linking,
-  TouchableOpacity,
-} from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 import React, { useState, useRef, useEffect } from 'react';
 import GenerateData from '../data';
-import { relative } from 'path';
 import Title from './components/Title';
 import Cards from './components/Cards';
 import NewCard from './components/NewCard';
@@ -24,13 +13,9 @@ type TrelloColumn = {
 
 export default function TrelloColumn() {
   const [openForm, setOpenForm] = useState<boolean>(false);
-  const [editTitle, setEditTitle] = useState<boolean>(false);
-  const columTitle: string = GenerateData().title;
   const [cards, setCards] = useState<string[]>([...GenerateData().cards]);
   const [cardContent, setCardContent] = useState<string>('');
   const textInputRef = useRef<TextInput | null>(null);
-
-  console.log(cards);
 
   useEffect(() => {
     if (openForm) {
@@ -56,10 +41,6 @@ export default function TrelloColumn() {
   const handleDeleteCard = (index: number): void => {
     const filterCards = cards.filter((_, i) => i !== index);
     setCards(filterCards);
-  };
-
-  const handleEditName = () => {
-    setEditTitle((prevState) => !prevState);
   };
 
   return (

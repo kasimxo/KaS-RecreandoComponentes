@@ -25,14 +25,16 @@ export default function NewCard({ openForm, handleNewForm }: NewCardProps) {
           </Pressable>
           <Pressable
             style={({ pressed }) => [
-              styles.imageButton,
+              styles.dotsButton,
               { backgroundColor: pressed ? '#22272b' : '#121212' },
             ]}
           >
-            <Image
-              style={styles.icon}
-              source={require('../template.png')}
-            ></Image>
+            <View style={styles.icon}>
+              <Image
+                style={styles.iconX}
+                source={require('@assets/agregar.png')}
+              />
+            </View>
           </Pressable>
         </View>
       )}
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
     height: '100%',
     color: '#b6c1ca',
   },
+  iconX: { width: 20, height: 20, tintColor: '#b6c1ca', marginLeft: 3 },
   imageButton: {
     borderRadius: 10,
     height: 18,
@@ -61,13 +64,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#b6c1ca',
   },
+  dotsButton: {
+    borderRadius: 10,
+    height: 40,
+    width: 40,
+  },
   addText: {
     fontSize: 16,
     color: '#b6c1ca',
   },
   addTextIcon: {
     paddingRight: 10,
-    paddingLeft: 15,
+    paddingLeft: 13,
     fontSize: 25,
     color: '#b6c1ca',
   },
