@@ -11,13 +11,14 @@
 1. Haz un fork del repositorio desde la rama main
     - Dentro del repositorio, haz clic en el botón de "Fork" en la esquina superior derecha.
 
-2. Clona el repositorio y crea una nueva rama, siguiendo la siguinte nomenclatura:
+2. Clona el repositorio y crea una nueva rama, <b>desde developer</b>, siguiendo la siguinte nomenclatura:
     - target/'id'-'tu nombre de usuario en github'
 id es el número identificador del target que has recreado, por ejemplo, el calendario de Github tiene el número 01. Puedes ver este número en el nombre de la propia carpeta del target.
 
     ```
     git clone https://github.com/kasimxo/KaS-RecreandoComponentes.git
     cd KaS-RecreandoComponentes
+    git checkout developer
     git checkout -b 'id'-'tu nombre de usuario en github'
     ```
 
@@ -39,6 +40,7 @@ id es el número identificador del target que has recreado, por ejemplo, el cale
 > Si en tu Pull Request aparece código o archivos modificados fuera del directorio:
 > src/targets/'tu target'/'tu nombre de usuario en github'
 > es muy posible que se soliciten cambios o no sea aceptada
+> (haz un merge desde developer, puede que te falte por incluir algún cambio)
 
 ## Modificación del proyecto
 
