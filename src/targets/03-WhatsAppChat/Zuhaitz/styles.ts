@@ -4,12 +4,12 @@ const chatStyles = StyleSheet.create({
   container: {
     minWidth: 300,
     width: "100%",
-    minHeight: 500,
+    minHeight: 300,
     height: "100%",
     marginBottom: 20,
   },
   chatZone: {
-    maxHeight: 600,
+    maxHeight: 500,
     height: "100%",
     backgroundColor: "#aaaaaa",
   },
@@ -55,11 +55,13 @@ const messageStyles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 5,
-    alignItems: "baseline",
+    alignItems: "flex-end",
   },
-  content: { fontSize: 16 },
+  content: {
+    fontSize: 16,
+  },
   date: {
-    flex: 1,
+    // flex: 1,
     textAlign: "right",
     fontSize: 14,
     color: "#a1a1a1",
@@ -89,8 +91,10 @@ const messageCreatorStyles = StyleSheet.create({
     height: "100%",
     fontSize: 20,
   },
-  emoji: {
+  symbol: {
     fontSize: 20,
+    color: "white",
+    textAlign: "center",
   },
   sendButton: {
     width: 43,

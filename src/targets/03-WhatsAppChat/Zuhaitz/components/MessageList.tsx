@@ -12,9 +12,22 @@ const MessageList = ({
 }) => {
   const flatListRef = useRef(null as FlatList<MessageType> | null);
 
+  const scrollToBottom = () => {
+    // flatListRef.current?.scrollToOffset({ offset: 99999999999999 });
+    // setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 500);
+    setTimeout(
+      () => flatListRef.current?.scrollToOffset({ offset: 99999999999999 }),
+      500
+    );
+  };
+
   useEffect(() => {
-    flatListRef.current?.scrollToOffset({ offset: 1000 });
+    scrollToBottom();
   }, [flatListRef]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <View style={{ flex: 1 }}>

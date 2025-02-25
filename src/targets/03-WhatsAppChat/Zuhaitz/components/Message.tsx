@@ -16,13 +16,21 @@ const Message = ({ message, color }: MessageData) => {
         !message.user && { alignItems: "flex-end" },
       ]}
     >
-      <View style={messageStyles.container}>
+      <View
+        style={[
+          messageStyles.container,
+          !message.user && { backgroundColor: "#e2ffc9" },
+        ]}
+      >
         <Text style={[{ fontWeight: "bold", fontSize: 14, color: color }]}>
           {user}
         </Text>
 
         <View style={messageStyles.textHourContainer}>
-          <Text style={messageStyles.content}>{content}</Text>
+          <View style={[{ flex: 1 }]}>
+            <Text style={messageStyles.content}>{content}</Text>
+          </View>
+
           <Text style={messageStyles.date}>
             {date.getHours()}:{date.getMinutes().toString().padStart(2, "0")}
           </Text>

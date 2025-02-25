@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { View, TextInput, Pressable, Platform, Text } from "react-native";
 import { messageCreatorStyles } from "../styles";
 
-const MessageCreator = () => {
+const MessageCreator = ({
+  onCreateMessage,
+}: {
+  onCreateMessage: (text: string) => void;
+}) => {
   const [text, setText] = useState("");
   const [editing, setEditing] = useState(false);
   const [height, setHeight] = useState(0);
@@ -13,13 +17,18 @@ const MessageCreator = () => {
   }, [text]);
 
   const createMessage = () => {
+    if (!editing) return;
+
+    onCreateMessage(text);
+
+    setEditing(false);
     setText("");
   };
 
   return (
     <View style={messageCreatorStyles.container}>
       <View style={messageCreatorStyles.textContainer}>
-        <Text style={messageCreatorStyles.emoji}>&#128512;</Text>
+        <Text style={messageCreatorStyles.symbol}>&#128512;</Text>
         <TextInput
           value={text}
           onChangeText={setText}
@@ -41,15 +50,11 @@ const MessageCreator = () => {
         onPress={createMessage}
         style={messageCreatorStyles.sendButton}
       >
-        <Text
-          style={{
-            fontSize: 20,
-            color: "white",
-            textAlign: "center",
-          }}
-        >
-          &#11166;
-        </Text>
+        {editing ? (
+          <Text style={messageCreatorStyles.symbol}>&#11166;</Text>
+        ) : (
+          <Text style={messageCreatorStyles.symbol}>&#127908;</Text>
+        )}
       </Pressable>
     </View>
   );

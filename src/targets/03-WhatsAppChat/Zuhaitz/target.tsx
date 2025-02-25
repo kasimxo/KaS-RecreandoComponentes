@@ -15,8 +15,7 @@ const WhatsAppChat = () => {
   const [colorUser, setColorUser] = useState({} as { [key: string]: string });
 
   useEffect(() => {
-    console.log(messages);
-    setMembers([...new Set(messages.map((message) => message.user))]);
+    setMembers(["Yo", ...new Set(messages.map((message) => message.user))]);
   }, [messages]);
 
   useEffect(() => {
@@ -25,12 +24,25 @@ const WhatsAppChat = () => {
     setColorUser(temp);
   }, [members]);
 
+  const onCreateMessage = (text: string) => {
+    const temp = messages;
+
+    temp.push({
+      date: new Date(Date.now() - 7 * 24 * 3600 * 1000),
+      user: "",
+      content: text.trim(),
+    });
+    console.log(temp);
+
+    setMessages([...temp]);
+  };
+
   return (
     <View style={chatStyles.container}>
       <ChatHeader chatName="Chat de grupo" members={members} />
       <View style={chatStyles.chatZone}>
         <MessageList messages={messages} colors={colorUser} />
-        <MessageCreator />
+        <MessageCreator onCreateMessage={onCreateMessage} />
       </View>
     </View>
   );
