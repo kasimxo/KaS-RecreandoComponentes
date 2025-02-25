@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 import GenerateData from "../data";
 import { ChatLog } from "./types";
-import { ChatHeader, MessageList } from "./components";
+import { ChatHeader, MessageCreator, MessageList } from "./components";
 
 import { chatStyles } from "./styles";
 import { colors } from "./constants";
@@ -30,6 +30,7 @@ const WhatsAppChat = () => {
       <ChatHeader chatName="Chat de grupo" members={members} />
       <View style={chatStyles.chatZone}>
         <MessageList messages={messages} colors={colorUser} />
+        <MessageCreator />
       </View>
     </View>
   );

@@ -4,7 +4,7 @@ const chatStyles = StyleSheet.create({
   container: {
     minWidth: 300,
     width: "100%",
-    minHeight: 600,
+    minHeight: 500,
     height: "100%",
     marginBottom: 20,
   },
@@ -66,6 +66,47 @@ const messageStyles = StyleSheet.create({
   },
 });
 
+const messageCreatorStyles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    padding: 5,
+    gap: 5,
+  },
+  textContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    // alignItems: "center",
+    gap: 5,
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: "white",
+    height: "100%",
+  },
+  textInput: {
+    flex: 1,
+    height: "100%",
+    fontSize: 20,
+  },
+  emoji: {
+    fontSize: 20,
+  },
+  sendButton: {
+    width: 43,
+    height: 43,
+    justifyContent: "center",
+    borderRadius: "100%",
+    backgroundColor: "#075e55",
+  },
+});
+
 const styles = StyleSheet.create({ text: { color: "white" } });
 
-export { chatStyles, chatHeaderStyles, messageStyles, styles };
+export {
+  chatStyles,
+  chatHeaderStyles,
+  messageStyles,
+  messageCreatorStyles,
+  styles,
+};
