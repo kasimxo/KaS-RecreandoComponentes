@@ -53,7 +53,7 @@ const TaskCreator = ({
 
             <Pressable onPress={stopEditing}>
               <Image
-                source={require("../../../../assets/cancelar.png")}
+                source={require("@assets/cancelar.png")}
                 style={styles.icon}
                 tintColor={"white"}
               />
