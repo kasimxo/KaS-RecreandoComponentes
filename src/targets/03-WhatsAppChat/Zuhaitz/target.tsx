@@ -32,7 +32,6 @@ const WhatsAppChat = () => {
       user: "",
       content: text.trim(),
     });
-    console.log(temp);
 
     setMessages([...temp]);
   };

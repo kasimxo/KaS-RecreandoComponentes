@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Platform } from "react-native";
 import { Message as MessageType } from "../types";
 import Message from "./Message";
 
@@ -12,21 +12,8 @@ const MessageList = ({
 }) => {
   const flatListRef = useRef(null as FlatList<MessageType> | null);
 
-  const scrollToBottom = () => {
-    // flatListRef.current?.scrollToOffset({ offset: 99999999999999 });
-    // setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 500);
-    setTimeout(
-      () => flatListRef.current?.scrollToOffset({ offset: 99999999999999 }),
-      500
-    );
-  };
-
   useEffect(() => {
-    scrollToBottom();
-  }, [flatListRef]);
-
-  useEffect(() => {
-    scrollToBottom();
+    flatListRef.current?.scrollToEnd({ animated: true });
   }, [messages]);
 
   return (
@@ -35,6 +22,7 @@ const MessageList = ({
         style={{ padding: 5 }}
         ref={(ref) => (flatListRef.current = ref)}
         data={messages}
+        // showsVerticalScrollIndicator={Platform.OS === "web" ? false : true}
         renderItem={({ item }) => (
           <Message message={item} color={colors[item.user]} />
         )}
