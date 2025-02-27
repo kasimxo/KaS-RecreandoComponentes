@@ -1,7 +1,6 @@
 import { View, StyleSheet,Text } from "react-native";
 import { Slot } from "expo-router";
 import { Stack } from 'expo-router/stack';
-import Header from './../components/header'
 
 export default function Layout(){
     return(
@@ -26,6 +25,7 @@ export default function Layout(){
             }}>
                 <Stack.Screen name="index" options={{title:"Inicio", headerShown:true}} />
                 <Stack.Screen name="test" options={{title:"Sobre el proyecto", headerShown:true}} />
+                <Stack.Screen name="contributors" options={{title: "Contribuidores", headerShown: true}} />
             </Stack>
 
     )

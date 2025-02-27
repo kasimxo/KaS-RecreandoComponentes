@@ -58,5 +58,12 @@ export const styles = StyleSheet.create({
     },
     component:{
         width:"100%"
+    },
+    contributorsTable: {
+        display:"flex",
+        justifyContent: "space-between",
+        width:"100%",
+        flexDirection:"row",
+        alignItems:"baseline"
     }
 })
