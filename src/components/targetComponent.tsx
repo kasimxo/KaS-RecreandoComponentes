@@ -10,7 +10,7 @@ export function TargetComponent (props: targetProps){
             <Text style={styles.targetTitle}>{name}</Text>
             <View style={styles.container}>
             {
-                Object.entries(targetArray).map(([author, Component])=>{
+                Object.entries(targetArray).filter(([k,v])=>k!=="order").map(([author, Component])=>{
                     return (
                     <View style={styles.component} key={`${author}-${name}`}>
                         <View style={styles.componentHeader}>
