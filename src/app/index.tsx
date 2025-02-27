@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Linking, ScrollView} from 'react-native';
-import TargetsComponent from './../components/targetsComponent'
-import {styles} from './../styles/styles'
-import TextCardComponent from '../components/textCardComponent';
+import TargetsComponent from '@components/targetsComponent'
+import TextCardComponent from '@components/textCardComponent';
+import {styles} from '@styles/styles'
 
 export default function Index(){
 
