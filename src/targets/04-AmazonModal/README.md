@@ -1,4 +1,4 @@
-# AirbnbModal
+# AmazonModal
 
 ## Descripción
 
