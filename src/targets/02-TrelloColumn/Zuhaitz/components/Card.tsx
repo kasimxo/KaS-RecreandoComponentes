@@ -32,7 +32,7 @@ const Card = ({ id, text, onEditCardHandle, onDeleteHandle }: CardData) => {
 
       <Pressable onPress={() => onDeleteHandle(id)}>
         <Image
-          source={require("../../../../assets/cancelar.png")}
+          source={require("@assets/cancelar.png")}
           style={styles.icon}
           tintColor={"white"}
         />

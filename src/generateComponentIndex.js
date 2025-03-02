@@ -7,7 +7,7 @@ const targets = fs.readdirSync(targetsDir).filter((dir) => !dir.endsWith('.ts') 
 
 let componentIndexContent = ""
 
-targets.forEach((targetDir) => {
+targets.forEach((targetDir, index) => {
     const targetName = targetDir.split('-')[1]
     console.log(targetName)
     if (targetName === "Template") return
@@ -17,7 +17,7 @@ targets.forEach((targetDir) => {
             && !dir.endsWith('.md'));
 
     let imports = "";
-    let targets = `const ${targetName}Array = {\n`;
+    let targets = `const ${targetName}Array = {\norder: ${index},\n`;
     let exports = `export { ${targetName}Array as ${targetDir.split("-")[1]} };\n`;
     versions.forEach((el) => {
         imports += `import ${el}${targetName} from './${targetDir}/${el}/target';\n`;
