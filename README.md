@@ -25,7 +25,7 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 
 <a name="target"></a>
 
-El Target de esta semana es.. [Columna de Trello](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/02-TrelloColumn/README.md)
+El Target de esta semana es.. [Modal de Airbnb](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/04-AirbnbModal/README.md)
 
 ## 📟 Tecnologías Utilizadas
 
