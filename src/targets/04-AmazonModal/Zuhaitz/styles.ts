@@ -34,6 +34,10 @@ export const modal = StyleSheet.create({
     borderBottomColor: "#d5d9d9",
     backgroundColor: "#f0f2f2",
   },
+  content: {
+    padding: 10,
+    paddingHorizontal: 24,
+  },
 });
 
 export const styles = StyleSheet.create({

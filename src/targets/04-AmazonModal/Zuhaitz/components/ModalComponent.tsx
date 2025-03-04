@@ -1,6 +1,7 @@
 import { View, Text, Modal, Image, Pressable } from "react-native";
 
 import { modal, styles } from "../styles";
+import Dropdown from "./Dropdown";
 
 const ModalComponent = ({
   showModal,
@@ -28,9 +29,11 @@ const ModalComponent = ({
             </Pressable>
           </View>
 
-          <View>
+          <View style={modal.content}>
             <Text>Cuéntanos cuál es el problema.</Text>
             <Text>¿Qué hay de malo en esta página? *</Text>
+
+            <Dropdown />
           </View>
         </View>
       </View>
