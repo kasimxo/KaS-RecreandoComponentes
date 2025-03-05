@@ -33,7 +33,6 @@ export default function ModalFormCheckbox({
       }
     });
   };
-  console.log(isCheck);
   return (
     <View style={{ position: 'relative', zIndex: 900 }}>
       <Text style={stylesModalContent.modalContentText}>
