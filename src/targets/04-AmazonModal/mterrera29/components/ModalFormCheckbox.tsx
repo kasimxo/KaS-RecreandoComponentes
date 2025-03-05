@@ -22,9 +22,9 @@ export default function ModalFormCheckbox({
 
   const checkedBox = (id: number) => {
     setIsCheck((prevState) => {
-      const exist = prevState.some((item) => {
-        item.id == id;
-      });
+      const exist = prevState.some((item) => item.id == id);
+
+      console.log(exist);
 
       if (exist) {
         return prevState.map((item) =>
@@ -35,6 +35,7 @@ export default function ModalFormCheckbox({
       }
     });
   };
+  console.log(isCheck);
   return (
     <View style={{ position: 'relative', zIndex: 900 }}>
       <Text style={stylesModalContent.modalContentText}>
