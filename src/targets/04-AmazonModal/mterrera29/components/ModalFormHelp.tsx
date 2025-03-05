@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { Pressable, View, Text } from 'react-native';
 import { styles, stylesModalSelect } from '../styles';
@@ -8,10 +7,7 @@ type ModalFormHelpProps = {
   advisor: boolean;
 };
 
-export default function ModalFormHelp({
-  isOpenSelect,
-  advisor,
-}: ModalFormHelpProps) {
+export default function ModalFormHelp({ advisor }: ModalFormHelpProps) {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <View style={[stylesModalSelect.modalHelp]}>

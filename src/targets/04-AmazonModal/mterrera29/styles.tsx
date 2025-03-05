@@ -42,6 +42,14 @@ export const stylesModal = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
   },
+  modalPressable: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
   modalHeader: {
     height: 57,
     width: '100%',
@@ -112,7 +120,13 @@ export const stylesModalContent = StyleSheet.create({
     paddingRight: 15,
     position: 'relative',
   },
-  iconVContainer: { width: 25, height: 11, overflow: 'hidden' },
+  iconVContainer: {
+    width: 25,
+    height: 25,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   iconV: {
     width: 20,
     height: 20,
