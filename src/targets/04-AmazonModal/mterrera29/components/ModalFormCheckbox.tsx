@@ -20,8 +20,6 @@ export default function ModalFormCheckbox({
     },
   ]);
 
-  console.log(isCheck);
-
   const checkedBox = (id: number) => {
     setIsCheck((prevState) => {
       const exist = prevState.some((item) => {
