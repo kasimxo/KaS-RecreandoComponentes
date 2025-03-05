@@ -8,10 +8,12 @@ import ModalFormHelp from './ModalFormHelp';
 
 type ModalFormCheckboxProps = {
   isOpenSelect: boolean;
+  setIsOpenModal: (value: React.SetStateAction<boolean>) => void;
 };
 
 export default function ModalFormCheckbox({
   isOpenSelect,
+  setIsOpenModal,
 }: ModalFormCheckboxProps) {
   const [isCheck, setIsCheck] = useState<{ id: number; check: boolean }[]>([
     {
@@ -63,7 +65,10 @@ export default function ModalFormCheckbox({
       </View>
       <ModalFormInput />
       <ModalFormHelp isOpenSelect={isOpenSelect} advisor={true} />
-      <ModalFormButton />
+      <ModalFormButton
+        setIsOpenModal={setIsOpenModal}
+        isDisabled={!isCheck.some((item) => item.check === true)}
+      />
     </View>
   );
 }

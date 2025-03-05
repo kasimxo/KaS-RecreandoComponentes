@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Pressable, View, Image, Text } from 'react-native';
-import { stylesModal, stylesModalContent, stylesModalSelect } from '../styles';
-import { dataSelect, dataLabels, dataSelectMissingInfo } from '../data';
-import ModalFormHelp from './ModalFormHelp';
+import { stylesModalContent, stylesModalSelect } from '../styles';
 import { Select } from '../data';
 
 type ModalFormSelectProps = {
@@ -48,7 +46,7 @@ export default function ModalFormSelect({
         <View style={stylesModalContent.iconVContainer}>
           <Image
             style={stylesModalContent.iconV}
-            source={require('@assets/cancelar.png')}
+            source={require('@assets/flecha-abajo.png')}
           />
         </View>
         {isOpenSelect && openThisSelect && (

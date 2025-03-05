@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { View } from 'react-native';
-import { styles, stylesModalContent, stylesModalSelect } from '../styles';
 import ModalFormSelect from './ModalFormSelect';
 import { dataLabels, dataSelectMissingInfo, dataSelect, Select } from '../data';
 import ModalFormHelp from './ModalFormHelp';
@@ -11,11 +10,13 @@ import ModalFormCheckbox from './ModalFormCheckbox';
 type ModalFormProps = {
   isOpenSelect: boolean;
   setIsOpenSelect: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ModalForm({
   isOpenSelect,
   setIsOpenSelect,
+  setIsOpenModal,
 }: ModalFormProps) {
   const [selectValue, setSelectValue] = useState({
     id: 0,
@@ -48,7 +49,9 @@ export default function ModalForm({
         handleValues={handleValues}
         data={dataSelect}
       />
-      {selectValue.id === 0 && <ModalFormButton />}
+      {selectValue.id === 0 && (
+        <ModalFormButton setIsOpenModal={setIsOpenModal} isDisabled={true} />
+      )}
       {selectValue.id === 1 && (
         <ModalFormHelp isOpenSelect={isOpenSelect} advisor={false} />
       )}
@@ -64,11 +67,17 @@ export default function ModalForm({
           />
           {selectValueMissingInfo.id !== 0 && <ModalFormInput />}
           <ModalFormHelp isOpenSelect={isOpenSelect} advisor={true} />
-          <ModalFormButton />
+          <ModalFormButton
+            setIsOpenModal={setIsOpenModal}
+            isDisabled={selectValueMissingInfo.id === 0 && true}
+          />
         </View>
       )}
       {selectValue.id === 3 && (
-        <ModalFormCheckbox isOpenSelect={isOpenSelect} />
+        <ModalFormCheckbox
+          isOpenSelect={isOpenSelect}
+          setIsOpenModal={setIsOpenModal}
+        />
       )}
     </View>
   );

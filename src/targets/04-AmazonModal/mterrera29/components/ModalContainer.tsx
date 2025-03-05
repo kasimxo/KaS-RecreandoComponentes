@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { View, Text, TouchableWithoutFeedback, Modal } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  Modal,
+  Pressable,
+} from 'react-native';
 import { stylesModal, stylesModalContent } from '../styles';
 import ModalHeader from './ModalHeader';
 import ModalForm from './ModalForm';
@@ -15,7 +21,10 @@ export default function ModalContainer({
 }: ModalContainerProps) {
   const [isOpenSelect, setIsOpenSelect] = useState<boolean>(false);
 
-  const handleOutsidePress = () => {
+  const handleOutsideModal = () => {
+    setIsOpenModal(false);
+  };
+  const handleOutsideSelect = () => {
     setIsOpenSelect(false);
   };
   return (
@@ -25,8 +34,11 @@ export default function ModalContainer({
       visible={isOpenModal}
       onRequestClose={() => setIsOpenModal(false)}
     >
-      <View style={stylesModal.modalBackground}>
-        <TouchableWithoutFeedback onPress={handleOutsidePress}>
+      <Pressable
+        style={stylesModal.modalBackground}
+        onPress={handleOutsideModal}
+      >
+        <TouchableWithoutFeedback onPress={handleOutsideSelect}>
           <View style={stylesModal.modalContainer}>
             <ModalHeader setIsOpenModal={setIsOpenModal} />
             <View style={stylesModalContent.modalContent}>
@@ -36,11 +48,12 @@ export default function ModalContainer({
               <ModalForm
                 isOpenSelect={isOpenSelect}
                 setIsOpenSelect={setIsOpenSelect}
+                setIsOpenModal={setIsOpenModal}
               />
             </View>
           </View>
         </TouchableWithoutFeedback>
-      </View>
+      </Pressable>
     </Modal>
   );
 }
