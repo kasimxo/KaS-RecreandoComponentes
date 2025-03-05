@@ -23,7 +23,7 @@ export default function Chats({ messages, scrollViewRef, users }: ChatsProps) {
       showsHorizontalScrollIndicator={false}
       ref={scrollViewRef}
     >
-      {messages.map((message) => {
+      {messages.map((message, index) => {
         const userIndex = users.findIndex((user) => user === message.user);
         const color = randomColorsArray[userIndex];
         const user = message.user;
@@ -36,7 +36,7 @@ export default function Chats({ messages, scrollViewRef, users }: ChatsProps) {
         const isPrevDay = prevDay.includes(day);
         prevDay.push(day);
         return (
-          <>
+          <View key={index}>
             {!isPrevDay && (
               <View style={styles.dateInfo}>
                 <Text style={styles.dateTextInfo}>{day}</Text>
@@ -50,7 +50,7 @@ export default function Chats({ messages, scrollViewRef, users }: ChatsProps) {
               isPrevUser={isPrevUser}
               isPrevDay={isPrevDay}
             />
-          </>
+          </View>
         );
       })}
     </ScrollView>
