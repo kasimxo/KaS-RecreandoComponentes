@@ -1,13 +1,5 @@
 import { useState } from 'react';
-import {
-  Pressable,
-  View,
-  Image,
-  TouchableOpacity,
-  Text,
-  TouchableWithoutFeedback,
-  Modal,
-} from 'react-native';
+import { View } from 'react-native';
 import { styles, stylesModalContent, stylesModalSelect } from '../styles';
 import ModalFormSelect from './ModalFormSelect';
 import { dataLabels, dataSelectMissingInfo, dataSelect, Select } from '../data';

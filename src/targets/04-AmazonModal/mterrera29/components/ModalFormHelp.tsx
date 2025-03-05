@@ -1,15 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import {
-  Pressable,
-  View,
-  Image,
-  TouchableOpacity,
-  Text,
-  TouchableWithoutFeedback,
-  Modal,
-} from 'react-native';
-import { styles, stylesModalContent, stylesModalSelect } from '../styles';
+import { Pressable, View, Text } from 'react-native';
+import { styles, stylesModalSelect } from '../styles';
 
 type ModalFormHelpProps = {
   isOpenSelect: boolean;
