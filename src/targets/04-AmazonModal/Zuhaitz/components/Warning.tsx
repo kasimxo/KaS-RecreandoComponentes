@@ -15,11 +15,7 @@ const Warning = () => {
         <LinkComponent
           text="Si necesitas ayuda con un pedido, haz clic aquí."
           fontSize={14}
-          onClick={() =>
-            Linking.openURL(
-              "https://www.amazon.es/hz/contact-us/foresight/hubgateway?ref_=tell_amazon"
-            )
-          }
+          onClick={() => {}}
         />
       </View>
     </View>
