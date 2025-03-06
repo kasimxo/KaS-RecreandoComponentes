@@ -2,9 +2,10 @@ import { useState } from "react";
 import { View, Text, Modal, Image, Pressable, Alert } from "react-native";
 
 import Dropdown from "./Dropdown";
-import { modal, styles } from "../styles";
 import TextBox from "./TextBox";
 import Warning from "./Warning";
+
+import { modal, styles } from "../styles";
 
 const ModalComponent = ({
   showModal,

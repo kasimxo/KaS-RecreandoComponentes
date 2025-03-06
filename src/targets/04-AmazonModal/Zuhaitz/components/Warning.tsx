@@ -1,5 +1,5 @@
 import { View, Text, Linking } from "react-native";
-import { styles, warning } from "../styles";
+import { warning } from "../styles";
 import LinkComponent from "./LinkComponent";
 
 const Warning = () => {
