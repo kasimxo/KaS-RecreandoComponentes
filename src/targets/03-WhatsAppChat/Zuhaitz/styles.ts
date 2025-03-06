@@ -2,15 +2,13 @@ import { StyleSheet } from "react-native";
 
 const chatStyles = StyleSheet.create({
   container: {
-    minWidth: 300,
-    width: "100%",
-    minHeight: 300,
+    margin: "auto",
     height: "100%",
+    width: 320,
     marginBottom: 20,
   },
   chatZone: {
-    maxHeight: 500,
-    height: "100%",
+    height: 500,
     backgroundColor: "#aaaaaa",
   },
 });
