@@ -12,6 +12,7 @@ const AmazonModal = () => {
 
       <LinkComponent
         text="Informar de un problema con este producto."
+        showIcon
         onClick={() => setShowModal(true)}
       />
     </View>

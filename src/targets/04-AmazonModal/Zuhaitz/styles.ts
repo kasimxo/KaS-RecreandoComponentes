@@ -84,6 +84,34 @@ export const commentBox = StyleSheet.create({
   },
 });
 
+export const warning = StyleSheet.create({
+  container: {
+    marginTop: 10,
+    paddingLeft: 10,
+    borderRadius: 5,
+    borderWidth: 3,
+    borderColor: "#246fb6",
+    backgroundColor: "#246fb6",
+    overflow: "hidden",
+  },
+  textContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    padding: 16,
+    backgroundColor: "white",
+  },
+
+  infoIcon: {
+    width: 18,
+    height: 18,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#246fb6",
+    borderRadius: "100%",
+  },
+});
+
 export const styles = StyleSheet.create({
   link: {
     flexDirection: "row",

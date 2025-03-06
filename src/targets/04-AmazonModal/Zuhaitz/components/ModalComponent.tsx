@@ -4,6 +4,7 @@ import { View, Text, Modal, Image, Pressable, Alert } from "react-native";
 import Dropdown from "./Dropdown";
 import { modal, styles } from "../styles";
 import TextBox from "./TextBox";
+import Warning from "./Warning";
 
 const ModalComponent = ({
   showModal,
@@ -55,7 +56,12 @@ const ModalComponent = ({
 
             <Dropdown selected={selected} selectedHandle={setSelected} />
 
-            {selected && <TextBox text={comment} setText={setComment} />}
+            {selected && (
+              <>
+                <TextBox text={comment} setText={setComment} />
+                <Warning />
+              </>
+            )}
 
             <View style={{ alignItems: "flex-end", marginTop: 18 }}>
               <Pressable onPress={closeModal} style={modal.sendBtn}>
