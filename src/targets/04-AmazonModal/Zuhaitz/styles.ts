@@ -75,6 +75,15 @@ export const dropdown = StyleSheet.create({
   },
 });
 
+export const commentBox = StyleSheet.create({
+  input: {
+    padding: 5,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: "#d5d9d9",
+  },
+});
+
 export const styles = StyleSheet.create({
   link: {
     flexDirection: "row",

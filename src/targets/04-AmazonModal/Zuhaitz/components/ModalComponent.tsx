@@ -3,6 +3,7 @@ import { View, Text, Modal, Image, Pressable, Alert } from "react-native";
 
 import Dropdown from "./Dropdown";
 import { modal, styles } from "../styles";
+import TextBox from "./TextBox";
 
 const ModalComponent = ({
   showModal,
@@ -12,9 +13,11 @@ const ModalComponent = ({
   setShowModal: (value: boolean) => void;
 }) => {
   const [selected, setSelected] = useState("");
+  const [comment, setComment] = useState("");
 
   const closeModal = () => {
     setSelected("");
+    setComment("");
     setShowModal(false);
   };
 
@@ -51,6 +54,8 @@ const ModalComponent = ({
             </Text>
 
             <Dropdown selected={selected} selectedHandle={setSelected} />
+
+            {selected && <TextBox text={comment} setText={setComment} />}
 
             <View style={{ alignItems: "flex-end", marginTop: 18 }}>
               <Pressable onPress={closeModal} style={modal.sendBtn}>
