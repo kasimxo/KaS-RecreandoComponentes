@@ -24,7 +24,6 @@ export default function Layout(){
             }
             }}>
                 <Stack.Screen name="index" options={{title:"Inicio", headerShown:true}} />
-                <Stack.Screen name="test" options={{title:"Sobre el proyecto", headerShown:true}} />
                 <Stack.Screen name="contributors" options={{title: "Contribuidores", headerShown: true}} />
             </Stack>
 
