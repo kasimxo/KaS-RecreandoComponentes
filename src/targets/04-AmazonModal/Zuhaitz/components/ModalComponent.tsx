@@ -1,7 +1,8 @@
-import { View, Text, Modal, Image, Pressable } from "react-native";
+import { useState } from "react";
+import { View, Text, Modal, Image, Pressable, Alert } from "react-native";
 
-import { modal, styles } from "../styles";
 import Dropdown from "./Dropdown";
+import { modal, styles } from "../styles";
 
 const ModalComponent = ({
   showModal,
@@ -10,18 +11,30 @@ const ModalComponent = ({
   showModal: boolean;
   setShowModal: (value: boolean) => void;
 }) => {
+  const [selected, setSelected] = useState("");
+
+  const closeModal = () => {
+    setSelected("");
+    setShowModal(false);
+  };
+
   return (
-    <Modal animationType="none" transparent visible={showModal}>
+    <Modal
+      animationType="none"
+      transparent
+      visible={showModal}
+      onRequestClose={() => {
+        Alert.alert("Modal has been closed.");
+        setShowModal(!showModal);
+      }}
+    >
       <View style={modal.container}>
         <View style={modal.box}>
           <View style={modal.topbar}>
             <Text style={{ flex: 1, fontWeight: "bold", fontSize: 16 }}>
               Informar de un problema
             </Text>
-            <Pressable
-              style={{ padding: 10 }}
-              onPress={() => setShowModal(false)}
-            >
+            <Pressable style={{ padding: 10 }} onPress={closeModal}>
               <Image
                 source={require("@assets/cancelar.png")}
                 style={styles.icon}
@@ -30,10 +43,20 @@ const ModalComponent = ({
           </View>
 
           <View style={modal.content}>
-            <Text>Cuéntanos cuál es el problema.</Text>
-            <Text>¿Qué hay de malo en esta página? *</Text>
+            <Text style={{ fontWeight: "bold", marginBottom: 10 }}>
+              Cuéntanos cuál es el problema.
+            </Text>
+            <Text style={{ fontWeight: "bold", marginBottom: 5 }}>
+              ¿Qué hay de malo en esta página? *
+            </Text>
 
-            <Dropdown />
+            <Dropdown selected={selected} selectedHandle={setSelected} />
+
+            <View style={{ alignItems: "flex-end", marginTop: 18 }}>
+              <Pressable onPress={closeModal} style={modal.sendBtn}>
+                <Text>Enviar</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </View>

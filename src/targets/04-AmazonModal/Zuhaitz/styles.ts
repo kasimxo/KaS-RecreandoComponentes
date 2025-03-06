@@ -11,7 +11,7 @@ export const modal = StyleSheet.create({
     margin: 20,
     backgroundColor: "white",
     borderRadius: 10,
-    overflow: "hidden",
+    // overflow: "hidden",
     maxWidth: "60%",
     minWidth: 300,
     width: "100%",
@@ -30,13 +30,48 @@ export const modal = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     paddingLeft: 24,
+    borderTopEndRadius: 10,
+    borderTopStartRadius: 10,
     borderBottomWidth: 2,
     borderBottomColor: "#d5d9d9",
     backgroundColor: "#f0f2f2",
   },
   content: {
-    padding: 10,
+    padding: 18,
     paddingHorizontal: 24,
+  },
+  sendBtn: {
+    padding: 6,
+    paddingHorizontal: 18,
+    borderRadius: 100,
+    backgroundColor: "#ffd814",
+  },
+});
+
+export const dropdown = StyleSheet.create({
+  container: { position: "relative", zIndex: 1 },
+  input: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 5,
+    paddingHorizontal: 10,
+    borderWidth: 2,
+    borderColor: "#d5d9d9",
+    borderRadius: 5,
+    backgroundColor: "#f0f2f2",
+  },
+  list: {
+    position: "absolute",
+    width: "100%",
+    paddingVertical: 4,
+    borderWidth: 2,
+    borderColor: "#d5d9d9",
+    borderRadius: 5,
+    backgroundColor: "white",
+  },
+  listObject: {
+    padding: 4,
+    paddingHorizontal: 10,
   },
 });
 
