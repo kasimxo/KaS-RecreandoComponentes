@@ -2,7 +2,7 @@
 
 ## Descripción
 
-
+![imagen](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/assets/imgs/ReadMoreMockup.png)
 
 ReadMore hace referencia a un tipo de componente que habrás visto en multitud de sitios: páginas de noticias, redes sociales, blogs... ¡hasta en LinkedIn!
 
