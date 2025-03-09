@@ -14,3 +14,4 @@
 | flecha-derecha.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 
 Cualquier imagen o icono cuya autoría no esté declarada en esta lista ha sido creado para el proyecto RecreandoComponentes y tiene la misma licencia de uso.
+
