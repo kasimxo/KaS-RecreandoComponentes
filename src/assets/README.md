@@ -12,3 +12,4 @@
 | flecha-abajo.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-izquierda.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-derecha.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
+| usuario.png | Yaicon | [ver](https://www.flaticon.es/autores/yaicon) |

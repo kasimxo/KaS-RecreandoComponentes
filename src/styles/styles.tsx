@@ -65,5 +65,11 @@ export const styles = StyleSheet.create({
         width:"100%",
         flexDirection:"row",
         alignItems:"baseline"
+    },
+    profilePicture: {
+        width:100,height:100, 
+        backgroundColor:"white", 
+        borderColor:"white", 
+        borderRadius: "100%"
     }
 })
