@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { View, FlatList, Platform } from "react-native";
-import { Message as MessageType } from "../types";
+import { View, FlatList } from "react-native";
 import Message from "./Message";
+import { Message as MessageType } from "../types";
 
 const MessageList = ({
   messages,
@@ -13,7 +13,7 @@ const MessageList = ({
   const flatListRef = useRef(null as FlatList<MessageType> | null);
 
   useEffect(() => {
-    flatListRef.current?.scrollToEnd({ animated: true });
+    setTimeout(() => flatListRef.current?.scrollToEnd({ animated: true }), 100);
   }, [messages]);
 
   return (
