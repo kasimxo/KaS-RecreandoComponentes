@@ -1,5 +1,4 @@
 import { View, StyleSheet,Text } from "react-native";
-import { Slot } from "expo-router";
 import { Stack } from 'expo-router/stack';
 
 export default function Layout(){
@@ -12,7 +11,7 @@ export default function Layout(){
             headerTitleStyle: {
                 fontWeight: 'bold',
             },
-            headerShown:true,
+            headerShown:false,
             contentStyle:{
                 backgroundColor:"#121212",
                 width:"100%",
@@ -23,8 +22,10 @@ export default function Layout(){
                 paddingTop:25
             }
             }}>
-                <Stack.Screen name="index" options={{title:"Inicio", headerShown:true}} />
+                <Stack.Screen name="index" options={{title:"Inicio", headerShown:false}} />
+                {/*
                 <Stack.Screen name="contributors" options={{title: "Contribuidores", headerShown: true}} />
+                */}
             </Stack>
 
     )

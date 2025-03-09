@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import {Text, View, StyleSheet, Linking} from 'react-native'
 import {styles} from '../styles/styles'
+import { Link } from 'expo-router'
 
 export function TargetComponent (props: targetProps){
     const name = props.name
@@ -14,7 +15,9 @@ export function TargetComponent (props: targetProps){
                     return (
                     <View style={styles.component} key={`${author}-${name}`}>
                         <View style={styles.componentHeader}>
-                            <Text style={styles.componentAuthor}>{author}</Text>
+                            <Link href={`/contributors/${author}`}>
+                                <Text style={styles.componentAuthor}>{author}</Text>
+                            </Link>
                             <Text style={styles.githubAuthor} 
                                 onPress={() => Linking.openURL(`https://github.com/${author}`)}>Perfil de Github</Text>
                         </View>
