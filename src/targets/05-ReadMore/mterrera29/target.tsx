@@ -15,7 +15,7 @@ export default function target() {
     <View style={styles.containerAll}>
       <View style={styles.container}>
         <View>
-          <Text style={styles.title}> {text.title} </Text>
+          <Text style={styles.title}>{text.title}</Text>
         </View>
         <Content text={text} setIsOpenModal={setIsOpenModal} />
       </View>
