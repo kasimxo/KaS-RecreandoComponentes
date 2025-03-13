@@ -80,17 +80,21 @@ export default ReadMore;
 const styles = StyleSheet.create({
   card: {
     maxWidth: 500,
-    padding: 10,
+    padding: 16,
     gap: 10,
     borderWidth: 2,
-    borderColor: "white",
+    borderColor: "#21404a",
     borderRadius: 10,
+    backgroundColor: "#141c26",
   },
 
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "white",
+    color: "#64ccb2",
+    paddingBottom: 5,
+    borderBottomWidth: 2,
+    borderBottomColor: "#2b8057",
   },
 
   content: {
@@ -100,7 +104,8 @@ const styles = StyleSheet.create({
   },
 
   readMore: {
-    backgroundColor: "green",
+    backgroundColor: "#2b8057",
+    borderRadius: 10,
   },
 
   readMoreText: {
