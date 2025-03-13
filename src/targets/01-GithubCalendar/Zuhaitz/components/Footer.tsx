@@ -1,18 +1,11 @@
-import { View, Text, Linking } from "react-native";
+import { View, Text } from "react-native";
 import { calendar, footerStyles, styles } from "../styles";
 import { colors } from "../constants";
 
 const Footer = () => {
   return (
     <View style={footerStyles.container}>
-      <Text
-        onPress={() =>
-          Linking.openURL(
-            "https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile"
-          )
-        }
-        style={styles.secondaryText}
-      >
+      <Text onPress={() => {}} style={styles.secondaryText}>
         Learn how we count contributions
       </Text>
 
