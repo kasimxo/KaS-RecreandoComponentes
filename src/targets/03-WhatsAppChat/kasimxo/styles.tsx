@@ -49,13 +49,20 @@ export const styles = StyleSheet.create({
         backgroundColor: "#ffffff",
         width: 240,
         height: "90%",
-        borderRadius: 50
+        borderRadius: 50,
+        display:"flex",
+        flexDirection:"row"
     },
     footerMic: {
         backgroundColor: "#07857b",
         borderRadius: "100%",
         width: 45,
-        height: "90%"
+        height: "90%",
+        alignContent:"center",
+        alignItems:"center",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"center"
     },
     msg: {
         backgroundColor: "#ffffff",
@@ -63,7 +70,8 @@ export const styles = StyleSheet.create({
         padding: 5
     },
     textInput:{
-        width: "80%",
+        flexGrow: 1,
+        marginLeft:20,
         alignSelf: "center",
         height: "100%",
         borderWidth: 0,
