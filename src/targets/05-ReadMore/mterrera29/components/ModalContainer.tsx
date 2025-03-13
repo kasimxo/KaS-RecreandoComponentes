@@ -46,7 +46,7 @@ export default function ModalContainer({
         <TouchableWithoutFeedback onPress={handleOutsideSelect}>
           <View style={stylesModal.modalContent}>
             <View style={stylesModal.modalHeader}>
-              <Text style={stylesModal.modalTitle}> {text.title} </Text>
+              <Text style={stylesModal.modalTitle}>{text.title}</Text>
               <Pressable
                 style={stylesModal.modalHeaderButton}
                 onPress={() => setIsOpenModal(false)}
