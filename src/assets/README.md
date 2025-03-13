@@ -12,3 +12,4 @@
 | flecha-abajo.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-izquierda.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-derecha.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
+| clip-de-papel.png | [Bartama Graphic](https://www.flaticon.es/autores/bartama-graphic) | [ver](https://www.flaticon.es/icono-gratis/clip-de-papel_3526078?term=clip&page=1&position=60&origin=search&related_id=3526078) |
