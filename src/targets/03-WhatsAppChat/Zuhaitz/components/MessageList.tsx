@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { View, FlatList } from "react-native";
-
 import Message from "./Message";
 import { Message as MessageType } from "../types";
 
