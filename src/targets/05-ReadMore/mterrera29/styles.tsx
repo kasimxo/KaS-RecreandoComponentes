@@ -1,0 +1,122 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  containerAll: { margin: 20 },
+  container: {
+    borderWidth: 1,
+    borderColor: '#9198a1',
+    borderRadius: 10,
+    padding: 20,
+    width: 400,
+    height: 250,
+    display: 'flex',
+    flexDirection: 'column',
+    alignSelf: 'flex-start',
+    overflow: 'hidden',
+  },
+  title: {
+    color: '#ededed',
+    fontWeight: 'bold',
+    fontSize: 24,
+    paddingBottom: 10,
+  },
+  content: {
+    color: '#ededed',
+    fontSize: 16,
+    position: 'relative',
+    zIndex: 500,
+  },
+  gradient: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1000,
+    height: 50, // Altura del degradado
+    backgroundColor: '#121212', // Color de fondo final
+  },
+  viewMore: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1005,
+    color: '#ededed',
+    fontSize: 24,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  readMore: {
+    color: '#ededed',
+    fontSize: 20,
+    paddingBottom: 10,
+  },
+});
+
+export const stylesModal = StyleSheet.create({
+  modalBackground: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalPressable: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  modalContent: {
+    alignSelf: 'center',
+    width: 500,
+    height: 500,
+    position: 'relative',
+    zIndex: 500,
+    backgroundColor: '#121212',
+    borderWidth: 1,
+    borderColor: '#9198a1',
+    borderRadius: 10,
+    padding: 15,
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+  },
+  modalText: { color: '#ededed', fontSize: 16 },
+  modalTitle: {
+    color: '#ededed',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+    alignSelf: 'center',
+  },
+  modalScroll: {
+    overflow: 'scroll',
+  },
+  modalHeader: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  modalHeaderButton: {
+    fontWeight: 'bold',
+    height: 30,
+    width: 30,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+  },
+  iconX: {
+    width: 20,
+    height: 20,
+  },
+});
