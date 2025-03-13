@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   },
 
   readMore: {
+    padding: 4,
     backgroundColor: "#2b8057",
     borderRadius: 10,
   },
