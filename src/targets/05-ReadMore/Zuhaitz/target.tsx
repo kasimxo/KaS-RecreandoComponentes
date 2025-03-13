@@ -3,47 +3,62 @@ import {
   Text,
   StyleSheet,
   Pressable,
+  Animated,
   LayoutChangeEvent,
+  Easing,
 } from "react-native";
 
 import GenerateData from "../data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_LINES = 10;
+const LINE_HEIGHT = 20;
+const CONTENT_SIZE = DEFAULT_LINES * LINE_HEIGHT;
 
 const ReadMore = () => {
-  const { title, content } = GenerateData();
+  const [data, setData] = useState(GenerateData());
   const [showMore, setShowMore] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
-  const [lines, setLines] = useState(DEFAULT_LINES);
+  // Animations
+  const valueAnimated = useState(new Animated.Value(CONTENT_SIZE))[0];
 
   const expand = () => {
+    Animated.timing(valueAnimated, {
+      toValue: 1000,
+      duration: 500,
+      useNativeDriver: false,
+    }).start();
     setExpanded(true);
-    setLines(1000);
   };
 
   const shrink = () => {
+    Animated.timing(valueAnimated, {
+      toValue: CONTENT_SIZE,
+      duration: 500,
+      useNativeDriver: false,
+    }).start();
     setExpanded(false);
-    setLines(DEFAULT_LINES);
   };
 
+  // On text render, check if need to show the button
   const onTextLayout = (e: LayoutChangeEvent) => {
-    setShowMore(e.nativeEvent.layout.height > 200 && lines !== 0);
+    setShowMore(e.nativeEvent.layout.height >= CONTENT_SIZE);
   };
 
   return (
     <View style={{ margin: "auto", marginBottom: 20 }}>
-      <View style={[styles.card]}>
-        <Text style={styles.title}>{title}</Text>
-        <Text
-          numberOfLines={lines}
-          // onTextLayout={onTextLayout}
+      <View style={styles.card}>
+        <Text style={styles.title}>{data.title}</Text>
+        <Animated.Text
           onLayout={onTextLayout}
-          style={styles.content}
+          style={[
+            styles.content,
+            { maxHeight: valueAnimated, lineHeight: LINE_HEIGHT },
+          ]}
         >
-          {content}
-        </Text>
+          {data.content}
+        </Animated.Text>
 
         {showMore && (
           <Pressable
@@ -79,7 +94,6 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    flex: 1,
     overflow: "hidden",
     fontSize: 16,
     color: "white",
