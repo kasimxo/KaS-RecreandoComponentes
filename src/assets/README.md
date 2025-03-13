@@ -12,6 +12,8 @@
 | flecha-abajo.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-izquierda.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
 | flecha-derecha.png | Grand Iconic | [ver](https://www.flaticon.es/autores/grand-iconic) |
+| clip-de-papel.png | [Bartama Graphic](https://www.flaticon.es/autores/bartama-graphic) | [ver](https://www.flaticon.es/icono-gratis/clip-de-papel_3526078?term=clip&page=1&position=60&origin=search&related_id=3526078) |
+| camara.png | [Gajah Mada](https://www.flaticon.es/autores/gajah-mada) | [ver](https://www.flaticon.es/icono-gratis/camara_17195986?term=camera&page=1&position=8&origin=search&related_id=17195986) |
 
-Cualquier imagen o icono cuya autoría no esté declarada en esta lista ha sido creado para el proyecto RecreandoComponentes y tiene la misma licencia de uso.
+Cualquier imagen o icono cuya autoría no esté declarada en esta lista ha sido creado para el proyecto RecreandoComponentes y tiene su misma licencia de uso.
 
