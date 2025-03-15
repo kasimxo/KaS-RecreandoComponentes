@@ -30,4 +30,4 @@ targets.forEach((targetDir, index) => {
 
 fs.writeFileSync(path.join(targetsDir, `componentIndex.ts`), componentIndexContent);
 
-console.log("Archivo index.ts generado correctamente en src/targets/")
+console.log("Archivo componentIndex.ts generado correctamente en src/targets/")

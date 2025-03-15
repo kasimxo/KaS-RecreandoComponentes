@@ -1,7 +1,6 @@
-import {Text, View, StyleSheet} from 'react-native'
+import {View} from 'react-native'
 import { TargetComponent } from './targetComponent'
 import * as Targets from './../targets/componentIndex'
-import {styles} from './../styles/styles'
 
 export default function TargetsComponent(){
 

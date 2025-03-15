@@ -1,55 +1,67 @@
-import { useLocalSearchParams } from 'expo-router'
+import { useNavigationContainerRef, useRouter } from 'expo-router'
 import {View, Text, Image} from 'react-native'
 import {useEffect, useState} from 'react'
 import {styles} from '@styles/styles'
+import { User } from 'types/userTypes'
+import { useStringParam } from '@utils/useTypedParams'
 
+import UsersSingleton from 'service/UsersSingleton';
+        
 export default function ContributorProfile(){
 
-    const {userName} = useLocalSearchParams()
-    const [profilePicture, setProfilePicture] = useState<string | undefined>(undefined)
-    let userData: UserData = undefined 
+    const userName = useStringParam("userName")
+    const router = useRouter()
 
+    const navigationRef = useNavigationContainerRef()
+    const [isReady, setIsReady] = useState(false)
 
-    useEffect(() => {
-        GetProfilePicture()       
-    },[userName])
+    const [user, setUser] = useState<User>()
 
-    async function GetProfilePicture(): Promise<void>{
-        /*
-        const url = `https://api.github.com/users/${userName}`
-        const response = await fetch(url)
-        const data = await response.json()
-        setProfilePicture(data.avatar_url)
-        userData = {
-            userName: userName,
-            profilePicture: data.avatar_url,
-            bio: data.bio,
-            url: data.url
+    useEffect(()=>{
+        const unsuscribe = navigationRef.addListener("state", ()=>{
+            setIsReady(true)
+        })
+        return ()=>unsuscribe()
+    },[])
+
+    useEffect(()=>{
+        if(!isReady) return
+        const userData = UsersSingleton.getUser(userName)
+        if(userData === null || userData === undefined){
+            router.replace("/")
+        } else {
+            setUser(userData)
         }
-        */
-       console.log(profilePicture)
-    }
+    },[isReady])
 
     return(
-        <View>
+        <>
             {
-                userData != undefined 
-                ? <Image source={ {uri: userData["profilePicture"]}} style={styles.profilePicture} /> 
-                : <Image source={require("@assets/usuario.png")} style={styles.profilePicture} />
+                user != undefined 
+                //This check could probably be removed?
+                ?      
+                <View>
+                    <View style={{borderColor:"orange", borderWidth:2}}>
+                        <Image source={{uri: user.profilePicture}} style={styles.profilePicture} /> 
+                        <Text style={styles.componentAuthor}>{user.userName}</Text>
+                        <Text style={styles.text}>{user.bio}</Text>
+                    </View>
+                    <View>
+                        {
+                            //Esto debería ser un scrollview para variar
+                            user.targets.map((target, index)=>(
+                                <View>
+                                    <Text style={styles.text}>
+                                        {target.name}
+                                    </Text>
+                                    <target.component />
+                                </View>
+                            ))
+                        }
+                    </View>
+                </View>      
+                : <></>
             }
-            <Text style={{color:"white"}}>
-                {userName}
-            </Text>
-            <Text>
-                {userData!=undefined? <Text>{userData["bio"]}</Text>: <></>}
-            </Text>
-        </View>
+        </>
     )
 }
-
-type UserData = {
-    userName: string,
-    profilePicture: string,
-    bio: string,
-    url: string
-} | undefined

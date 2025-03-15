@@ -1,6 +1,6 @@
 import * as Targets from '@targets/componentIndex'
 
-export function GetContributorsNamesParticipations(): ContributorParticipation[] {
+export default function getContributorsNamesParticipations(): ContributorParticipation[] {
     console.log()
     const contributors: ContributorParticipation[] = []
 

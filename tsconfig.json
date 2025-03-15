@@ -7,9 +7,9 @@
       "@app/*": ["app/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
-      "@styles/*":["styles/*"],
-      "@targets/*":["targets/*"],
-      "@utils/*":["utils/*"]
+      "@styles/*": ["styles/*"],
+      "@targets/*": ["targets/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

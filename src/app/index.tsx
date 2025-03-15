@@ -1,10 +1,9 @@
-import {View, Text, StyleSheet, Linking, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import TargetsComponent from '@components/targetsComponent'
 import TextCardComponent from '@components/textCardComponent';
 import {styles} from '@styles/styles'
 
 export default function Index(){
-
     return(
         <ScrollView style={{paddingHorizontal:25}}
             contentContainerStyle={styles.componentlist}>

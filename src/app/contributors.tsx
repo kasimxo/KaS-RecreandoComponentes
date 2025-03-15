@@ -1,9 +1,9 @@
 import {Text, View} from 'react-native'
-import { GetContributorsNamesParticipations } from '@utils/getContributorsNamesParticipations'
+import getContributorsNamesParticipations from '@utils/getContributorsNamesParticipations'
 import {styles} from '@styles/styles'
 
 export default function contributors(){
-    const contributors = GetContributorsNamesParticipations();
+    const contributors = getContributorsNamesParticipations();
     
     return (
         <View style={{width:"100%"}}>

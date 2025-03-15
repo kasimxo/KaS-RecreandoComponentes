@@ -1,10 +1,14 @@
-export default class UsersSingleton {
+import { User } from "../types/userTypes";
+import getUsersCollection from '@utils/getUsersCollection'
+
+class UsersSingleton {
 
     private static instance: UsersSingleton
     private usersCollection: Record<string, User>
 
     private constructor(){
-        this.usersCollection = {}
+        this.usersCollection = Object.freeze(getUsersCollection())
+        console.log("We declared the singleton obj")
     }
 
     public static getInstance(): UsersSingleton{
@@ -18,18 +22,17 @@ export default class UsersSingleton {
         return this.usersCollection[userName]
     }
 
-    public setUser(user: User): void {
-        this.usersCollection[user.userName] = user
-    }
-
     public hasUser(userName: string): boolean {
         return this.usersCollection.hasOwnProperty(userName)
     }
+
+    public getUserNameList(): string[]{
+        return Object.keys(this.usersCollection)
+    }
+
+    public getAllUsers(): User[]{
+        return Object.values(this.usersCollection)
+    }
 }
 
-interface User {
-    userName: string,
-    profilePicture: string,
-    bio: string,
-    url: string
-}
+export default UsersSingleton.getInstance()
