@@ -25,7 +25,7 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 
 <a name="target"></a>
 
-El Target de esta semana es.. [Read more](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/05-ReadMore/README.md)
+El Target de esta semana es... [Read more](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/05-ReadMore/README.md)
 
 ## 📟 Tecnologías Utilizadas
 
@@ -64,6 +64,7 @@ RC
 │   ├── app/
 │   ├── assets/
 │   ├── components/
+│   ├── service/
 │   ├── targets/
 │   │   ├── 00-Template/
 │   │   ├── 0X-TargetName/
@@ -71,6 +72,8 @@ RC
 │   │   │   ├── data.ts
 │   │   │   └── Readme.md
 │   │   └── componentIndex.ts
+│   ├── types/
+│   ├── utils/
 │   └── generateComponentIndex.js
 ├── tsconfig.json
 ├── package.json
