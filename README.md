@@ -25,7 +25,7 @@ Todos los domingos se publica un nuevo 🎯target. Un target es un componente de
 
 <a name="target"></a>
 
-El Target de esta semana es.. [Read more](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/05-ReadMore/README.md)
+El Target de esta semana es... [Rolling Characters](https://github.com/kasimxo/KaS-RecreandoComponentes/blob/main/src/targets/06-RollingCharacters/README.md)
 
 ## 📟 Tecnologías Utilizadas
 
