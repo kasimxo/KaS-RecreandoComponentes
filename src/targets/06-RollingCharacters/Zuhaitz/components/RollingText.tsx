@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Animated, StyleSheet, Text, View } from "react-native";
+import { Animated, Image, StyleSheet, Text, View } from "react-native";
 
 type RollingTextProps = {
   text: string;
@@ -50,18 +50,18 @@ const RollingText = ({
   }, [text, duration]);
 
   // Animations
-  const opacity = useState(new Animated.Value(0))[0];
+  const maxWidth = useState(new Animated.Value(0))[0];
 
   const appear = () => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 200,
+    Animated.timing(maxWidth, {
+      toValue: 100,
+      duration: 300,
       useNativeDriver: false,
     }).start();
   };
 
   const disappear = () => {
-    Animated.timing(opacity, {
+    Animated.timing(maxWidth, {
       toValue: 0,
       duration: 100,
       useNativeDriver: false,
@@ -79,11 +79,13 @@ const RollingText = ({
         </Text>
       </Text>
 
-      <Animated.Image
-        source={require("@assets/controlar.png")}
-        style={[styles.icon, { opacity: opacity }]}
-        tintColor={accentColor}
-      />
+      <Animated.View style={{ maxWidth: maxWidth, overflow: "hidden" }}>
+        <Image
+          source={require("@assets/controlar.png")}
+          style={styles.icon}
+          tintColor={accentColor}
+        />
+      </Animated.View>
     </View>
   );
 };
