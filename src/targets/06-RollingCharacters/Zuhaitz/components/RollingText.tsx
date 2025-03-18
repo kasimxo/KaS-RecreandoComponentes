@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Animated, Image, StyleSheet, Text, View } from "react-native";
+import { Animated, StyleSheet, Text, View } from "react-native";
 
 type RollingTextProps = {
   text: string;
@@ -20,6 +20,7 @@ const RollingText = ({
   const [animatedText, setAnimatedText] = useState("");
 
   useEffect(() => {
+    const timing = (duration * 1000) / text.length;
     index.current = 0;
     disappear();
 
@@ -30,17 +31,22 @@ const RollingText = ({
         dum += chars[Math.floor(Math.random() * chars.length)];
       }
 
-      setAnimatedText(dum);
       finalText.current = text.slice(0, index.current);
+      setAnimatedText(dum);
+    }, timing / 2);
 
+    const addIndex = setInterval(() => {
       if (index.current >= text.length) {
         appear();
-        return clearInterval(rollText);
+        return clearInterval(addIndex);
       }
       index.current += 1;
-    }, (duration * 1000) / text.length);
+    }, timing);
 
-    return () => clearInterval(rollText);
+    return () => {
+      clearInterval(rollText);
+      clearInterval(addIndex);
+    };
   }, [text, duration]);
 
   // Animations
